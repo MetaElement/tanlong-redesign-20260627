@@ -1,0 +1,108 @@
+{
+  "title": "Tanlong Environment full website page effect set",
+  "date": "2026-06-27",
+  "target": "坦隆环境官网整套页面效果",
+  "format": {
+    "type": "desktop website page effect images",
+    "width": 1920,
+    "height": 1080
+  },
+  "pages": [
+    {
+      "id": "00-home",
+      "label": "首页 / Home",
+      "html": "html/00-home.html",
+      "png": "final/tanlong-00-home-1920x1080.png",
+      "caption": "首屏承接 Poten 式沉浸感，但信息改为坦隆的钢渣处理、余热回收、专利与项目证明。"
+    },
+    {
+      "id": "01-about",
+      "label": "关于我们 / About",
+      "html": "html/01-about.html",
+      "png": "final/tanlong-01-about-1920x1080.png",
+      "caption": "把品牌理念、技术领军、信用资质和落地规模前置，建立 B2B 官网的第一层可信度。"
+    },
+    {
+      "id": "02-solutions",
+      "label": "产品方案 / Solutions",
+      "html": "html/02-solutions.html",
+      "png": "final/tanlong-02-solutions-1920x1080.png",
+      "caption": "用三张核心业务图形成方案入口：钢渣处理、余热回收、低碳数据看板，并补足工程服务流程。"
+    },
+    {
+      "id": "03-technology",
+      "label": "核心技术 / Technology",
+      "html": "html/03-technology.html",
+      "png": "final/tanlong-03-technology-1920x1080.png",
+      "caption": "技术页用流程图和专利数据表达硬核能力，避免只放抽象口号。"
+    },
+    {
+      "id": "04-cases",
+      "label": "案例中心 / Cases",
+      "html": "html/04-cases.html",
+      "png": "final/tanlong-04-cases-1920x1080.png",
+      "caption": "案例页不伪造客户 Logo，用应用场景、工况和落地数量建立可信但可发布的证明层。"
+    },
+    {
+      "id": "05-resources-contact",
+      "label": "资源与联系 / Resources & Contact",
+      "html": "html/05-resources-contact.html",
+      "png": "final/tanlong-05-resources-contact-1920x1080.png",
+      "caption": "把资料下载、专家咨询、项目周期和线索表单整合成转化页，服务官网商业目标。"
+    },
+    {
+      "id": "06-slag-detail",
+      "label": "钢渣方案详情 / Slag Treatment",
+      "html": "html/06-slag-detail.html",
+      "png": "final/tanlong-06-slag-detail-1920x1080.png",
+      "caption": "方案详情页把客户痛点、工艺亮点、适用场景和可量化证明集中到一屏。"
+    },
+    {
+      "id": "07-heat-detail",
+      "label": "余热回收详情 / Heat Recovery",
+      "html": "html/07-heat-detail.html",
+      "png": "final/tanlong-07-heat-detail-1920x1080.png",
+      "caption": "余热详情页突出换热系统、能源回收、运行监控和产线安全边界。"
+    },
+    {
+      "id": "08-digital-detail",
+      "label": "数字化看板详情 / Digital Dashboard",
+      "html": "html/08-digital-detail.html",
+      "png": "final/tanlong-08-digital-detail-1920x1080.png",
+      "caption": "数字化详情页用仪表盘化表达能效、产线状态、运维和低碳指标，不伪造真实数据。"
+    },
+    {
+      "id": "09-case-detail",
+      "label": "案例详情 / Case Detail",
+      "html": "html/09-case-detail.html",
+      "png": "final/tanlong-09-case-detail-1920x1080.png",
+      "caption": "案例详情页用“背景、方案、结果、可复用经验”组织内容，不写未授权客户名。"
+    },
+    {
+      "id": "10-resource-article",
+      "label": "资源文章 / Resource Article",
+      "html": "html/10-resource-article.html",
+      "png": "final/tanlong-10-resource-article-1920x1080.png",
+      "caption": "资源文章页服务 SEO、销售赋能和技术决策，不只是新闻列表。"
+    },
+    {
+      "id": "11-service-process",
+      "label": "服务流程 / Service Process",
+      "html": "html/11-service-process.html",
+      "png": "final/tanlong-11-service-process-1920x1080.png",
+      "caption": "服务流程页把咨询、调研、方案、商务、交付、运维复盘形成官网转化闭环。"
+    }
+  ],
+  "deterministicLayers": [
+    "Logo placement",
+    "Navigation",
+    "Chinese and English copy",
+    "CTA labels",
+    "Metrics and proof points",
+    "Page structure and layout"
+  ],
+  "visualLayers": [
+    "Generated environmental backgrounds from the homepage palette exploration",
+    "Tanlong PPT-derived site images copied into this run folder"
+  ]
+}

@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>坦隆环境官网整套页面 - 核心技术</title>
+  <style>
+  :root {
+    --white: #ffffff;
+    --ink: #061923;
+    --blue: #068fcf;
+    --cyan: #38d7f7;
+    --green: #42d596;
+    --mint: #b6f2df;
+    --amber: #ffc76a;
+    --line: rgba(255, 255, 255, 0.28);
+    --soft: rgba(255, 255, 255, 0.74);
+    --muted: rgba(255, 255, 255, 0.58);
+  }
+
+  * { box-sizing: border-box; }
+
+  html,
+  body {
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #061923;
+    font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", Arial, sans-serif;
+  }
+
+  body {
+    color: var(--white);
+  }
+
+  .page {
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .bg,
+  .image-fill {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bg { z-index: -5; }
+
+  .shade {
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    background:
+      radial-gradient(circle at 78% 18%, rgba(70, 220, 180, 0.22), transparent 27%),
+      linear-gradient(90deg, rgba(4, 26, 35, 0.95) 0%, rgba(8, 45, 55, 0.84) 34%, rgba(10, 80, 76, 0.36) 62%, rgba(8, 31, 40, 0.34) 100%),
+      linear-gradient(180deg, rgba(8, 25, 33, 0.16), rgba(4, 18, 24, 0.7));
+  }
+
+  .grid {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    opacity: 0.34;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 96px 96px;
+    mask-image: linear-gradient(90deg, #000 0%, #000 50%, transparent 82%);
+  }
+
+  .scanline {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    bottom: 88px;
+    height: 1px;
+    z-index: -1;
+    background: linear-gradient(90deg, transparent, rgba(87, 235, 219, 0.92), transparent);
+    box-shadow: 0 0 32px rgba(87, 235, 219, 0.32);
+  }
+
+  header {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    top: 38px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    z-index: 8;
+  }
+
+  .brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex: 0 0 auto;
+  }
+
+  .brand-logo {
+    display: block;
+    width: 330px;
+    height: 56px;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.22));
+  }
+
+  .brand-slogan {
+    min-width: 218px;
+    padding-left: 24px;
+    border-left: 1px solid rgba(255, 255, 255, 0.48);
+  }
+
+  .brand-slogan strong,
+  .brand-slogan span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .brand-slogan strong {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 560;
+  }
+
+  .brand-slogan span {
+    margin-top: 9px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 1.2px;
+  }
+
+  nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 46px;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.82);
+    white-space: nowrap;
+  }
+
+  nav span {
+    position: relative;
+  }
+
+  nav span.active {
+    color: #fff;
+  }
+
+  nav span.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    height: 3px;
+    background: #fff;
+  }
+
+  .stock {
+    margin-left: 42px;
+    padding-left: 34px;
+    min-width: 116px;
+    border-left: 1px solid rgba(255, 255, 255, 0.54);
+    font-size: 14px;
+    line-height: 1.25;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .stock strong {
+    display: block;
+    margin-top: 6px;
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+
+  .search {
+    margin-left: 28px;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .search::before {
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+
+  .search::after {
+    content: "";
+    position: absolute;
+    left: 27px;
+    top: 27px;
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    transform: rotate(45deg);
+    transform-origin: left center;
+  }
+
+  .side-rail {
+    position: absolute;
+    left: 34px;
+    top: 398px;
+    display: grid;
+    gap: 16px;
+    z-index: 5;
+  }
+
+  .rail-dot {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.54);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+  }
+
+  .rail-dot.active {
+    border-color: transparent;
+    background: linear-gradient(135deg, #16bfdf, #35d18d);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 26px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 54px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--cyan), var(--green));
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin: 0;
+  }
+
+  .page-title {
+    font-size: 66px;
+    line-height: 1.08;
+    font-weight: 650;
+    letter-spacing: 0;
+    text-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  }
+
+  .lede {
+    margin-top: 28px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 20px;
+    line-height: 1.78;
+    font-weight: 350;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 38px;
+  }
+
+  .button {
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 28px;
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+  }
+
+  .button.primary {
+    border-color: transparent;
+    background: linear-gradient(110deg, #00a8e8, #31cf92);
+    box-shadow: 0 18px 46px rgba(0, 168, 232, 0.24);
+  }
+
+  .button.secondary {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(18px);
+  }
+
+  .glass {
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.055));
+    backdrop-filter: blur(22px);
+    box-shadow: 0 30px 80px rgba(0, 24, 36, 0.24);
+  }
+
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(18px);
+  }
+
+  .metric {
+    min-height: 122px;
+    padding: 22px 28px;
+    border-right: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  .metric:last-child { border-right: 0; }
+
+  .metric strong {
+    display: block;
+    color: #fff;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: 650;
+  }
+
+  .metric span {
+    display: block;
+    margin-top: 13px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+  }
+
+  .section-label {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+  }
+
+  .caption {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .small-caps {
+    color: var(--cyan);
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+
+  .page-no {
+    position: absolute;
+    right: 104px;
+    bottom: 40px;
+    color: rgba(255, 255, 255, 0.54);
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+
+  .home-copy {
+    position: absolute;
+    left: 104px;
+    top: 214px;
+    width: 810px;
+  }
+
+  .home-copy .page-title {
+    font-size: 78px;
+    max-width: 780px;
+  }
+
+  .home-metrics {
+    position: absolute;
+    left: 104px;
+    bottom: 96px;
+    width: 870px;
+  }
+
+  .capability {
+    position: absolute;
+    right: 104px;
+    bottom: 94px;
+    width: 680px;
+    padding: 30px;
+  }
+
+  .capability-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 14px;
+  }
+
+  .capability-head strong {
+    color: #fff;
+    font-size: 19px;
+    font-weight: 600;
+  }
+
+  .services {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .service-card {
+    min-height: 92px;
+    padding: 18px 18px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(1, 22, 32, 0.24);
+  }
+
+  .service-card strong {
+    display: block;
+    margin-top: 11px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 520;
+  }
+
+  .about-copy {
+    position: absolute;
+    left: 104px;
+    top: 184px;
+    width: 720px;
+  }
+
+  .about-visual {
+    position: absolute;
+    right: 104px;
+    top: 184px;
+    width: 860px;
+    height: 568px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.32);
+  }
+
+  .about-visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(4, 24, 32, 0.26), rgba(4, 24, 32, 0.02)), linear-gradient(0deg, rgba(4, 24, 32, 0.42), transparent 48%);
+  }
+
+  .beliefs {
+    position: absolute;
+    left: 104px;
+    bottom: 98px;
+    width: 1712px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .belief {
+    min-height: 148px;
+    padding: 26px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(7, 35, 46, 0.42);
+    backdrop-filter: blur(18px);
+  }
+
+  .belief strong {
+    display: block;
+    margin-top: 14px;
+    font-size: 24px;
+    font-weight: 560;
+  }
+
+  .belief p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    line-height: 1.62;
+  }
+
+  .proof-stack {
+    position: absolute;
+    right: 156px;
+    top: 664px;
+    width: 650px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .solution-copy {
+    position: absolute;
+    left: 104px;
+    top: 180px;
+    width: 760px;
+  }
+
+  .solution-tiles {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    bottom: 286px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+
+  .solution-tile {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    background: #0c2d36;
+  }
+
+  .solution-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(1.04) contrast(0.96);
+  }
+
+  .solution-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 26%, rgba(4, 20, 27, 0.84));
+  }
+
+  .solution-info {
+    position: absolute;
+    left: 26px;
+    right: 26px;
+    bottom: 24px;
+    z-index: 1;
+  }
+
+  .solution-info strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 590;
+  }
+
+  .solution-info p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .process-strip {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    bottom: 98px;
+    min-height: 150px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 1.1fr 4fr;
+    gap: 34px;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .process-step {
+    min-height: 92px;
+    padding: 18px 18px;
+    border-left: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .process-step strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 19px;
+    font-weight: 560;
+  }
+
+  .tech-copy {
+    position: absolute;
+    left: 104px;
+    top: 178px;
+    width: 740px;
+  }
+
+  .tech-machine {
+    position: absolute;
+    right: 104px;
+    top: 178px;
+    width: 858px;
+    height: 508px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .tech-machine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(4, 22, 31, 0.18), transparent),
+      linear-gradient(0deg, rgba(4, 22, 31, 0.5), transparent 58%);
+  }
+
+  .tech-flow {
+    position: absolute;
+    left: 104px;
+    bottom: 102px;
+    width: 1060px;
+    height: 262px;
+    padding: 28px;
+  }
+
+  .flow-line {
+    position: absolute;
+    left: 74px;
+    right: 74px;
+    top: 138px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(55, 216, 247, 0.18), rgba(55, 216, 247, 0.94), rgba(66, 213, 150, 0.94), rgba(255, 199, 106, 0.16));
+    box-shadow: 0 0 26px rgba(55, 216, 247, 0.32);
+  }
+
+  .flow-items {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 52px;
+  }
+
+  .flow-item {
+    text-align: center;
+  }
+
+  .flow-dot {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 18px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.46);
+    background: rgba(4, 32, 42, 0.76);
+    color: #fff;
+    font-size: 15px;
+    box-shadow: 0 0 28px rgba(55, 216, 247, 0.18);
+  }
+
+  .flow-item strong {
+    display: block;
+    font-size: 18px;
+    font-weight: 560;
+  }
+
+  .flow-item span {
+    display: block;
+    margin-top: 9px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .patent-panel {
+    position: absolute;
+    right: 104px;
+    bottom: 102px;
+    width: 620px;
+    height: 262px;
+    padding: 28px;
+  }
+
+  .patent-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .patent {
+    padding: 20px 18px;
+    min-height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .patent strong {
+    display: block;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .patent span {
+    display: block;
+    margin-top: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .cases-copy {
+    position: absolute;
+    left: 104px;
+    top: 184px;
+    width: 740px;
+  }
+
+  .case-list {
+    position: absolute;
+    left: 104px;
+    bottom: 104px;
+    width: 760px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .case-card {
+    min-height: 124px;
+    display: grid;
+    grid-template-columns: 92px 1fr 130px;
+    align-items: center;
+    gap: 22px;
+    padding: 22px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(6, 32, 43, 0.52);
+    backdrop-filter: blur(18px);
+  }
+
+  .case-no {
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(135deg, #17b7dc, #42d596);
+    font-size: 18px;
+    font-weight: 620;
+  }
+
+  .case-card strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 560;
+  }
+
+  .case-card p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .case-card em {
+    font-style: normal;
+    color: var(--mint);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .service-map {
+    position: absolute;
+    right: 104px;
+    top: 196px;
+    width: 800px;
+    height: 680px;
+    padding: 34px;
+  }
+
+  .map-canvas {
+    position: relative;
+    height: 500px;
+    margin-top: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background:
+      linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,.055) 1px, transparent 1px),
+      radial-gradient(circle at 72% 34%, rgba(56, 215, 247, 0.18), transparent 28%),
+      radial-gradient(circle at 36% 62%, rgba(66, 213, 150, 0.18), transparent 32%);
+    background-size: 92px 92px, 92px 92px, auto, auto;
+  }
+
+  .map-line {
+    position: absolute;
+    left: 110px;
+    right: 120px;
+    top: 238px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(55,216,247,.2), rgba(55,216,247,.9), rgba(66,213,150,.9));
+    transform: rotate(-12deg);
+    box-shadow: 0 0 24px rgba(55,216,247,.34);
+  }
+
+  .site-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 8px rgba(55, 216, 247, 0.18), 0 0 28px rgba(55, 216, 247, 0.58);
+  }
+
+  .site-label {
+    position: absolute;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(4, 25, 34, 0.58);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+  }
+
+  .resources-copy {
+    position: absolute;
+    left: 104px;
+    top: 184px;
+    width: 720px;
+  }
+
+  .resource-grid {
+    position: absolute;
+    left: 104px;
+    bottom: 100px;
+    width: 900px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .resource-card {
+    min-height: 154px;
+    padding: 26px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(7, 35, 46, 0.42);
+    backdrop-filter: blur(18px);
+  }
+
+  .resource-card strong {
+    display: block;
+    margin-top: 14px;
+    font-size: 22px;
+    font-weight: 560;
+  }
+
+  .resource-card p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 14px;
+    line-height: 1.56;
+  }
+
+  .contact-panel {
+    position: absolute;
+    right: 104px;
+    top: 196px;
+    width: 720px;
+    height: 678px;
+    padding: 34px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 28px;
+  }
+
+  .field {
+    min-height: 76px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .field.wide {
+    grid-column: 1 / -1;
+    min-height: 146px;
+  }
+
+  .field span {
+    display: block;
+    color: rgba(255, 255, 255, 0.52);
+    font-size: 13px;
+  }
+
+  .field strong {
+    display: block;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 17px;
+    font-weight: 430;
+  }
+
+  .cycle {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .cycle span {
+    min-height: 56px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 13px;
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .detail-copy {
+    position: absolute;
+    left: 104px;
+    top: 178px;
+    width: 710px;
+  }
+
+  .detail-hero {
+    position: absolute;
+    right: 104px;
+    top: 178px;
+    width: 860px;
+    height: 510px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .detail-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4, 23, 31, 0.46), transparent 50%), linear-gradient(90deg, rgba(4, 23, 31, 0.18), transparent);
+  }
+
+  .detail-kpis {
+    position: absolute;
+    left: 104px;
+    bottom: 102px;
+    width: 760px;
+  }
+
+  .detail-board {
+    position: absolute;
+    right: 104px;
+    bottom: 102px;
+    width: 860px;
+    height: 282px;
+    padding: 30px;
+  }
+
+  .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .detail-card {
+    min-height: 142px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .detail-card strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 21px;
+    line-height: 1.25;
+    font-weight: 560;
+  }
+
+  .detail-card p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .route-map {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    bottom: 106px;
+    height: 300px;
+    padding: 30px 34px;
+  }
+
+  .route-steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .route-step {
+    min-height: 170px;
+    padding: 22px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .route-step strong {
+    display: block;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 560;
+  }
+
+  .route-step p {
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+    line-height: 1.48;
+  }
+
+  .data-dashboard {
+    position: absolute;
+    right: 104px;
+    top: 178px;
+    width: 840px;
+    height: 606px;
+    padding: 30px;
+  }
+
+  .dash-top {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 24px;
+  }
+
+  .dash-widget {
+    min-height: 132px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .dash-widget strong {
+    display: block;
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  .dash-widget span {
+    display: block;
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 14px;
+  }
+
+  .chart-slab {
+    height: 260px;
+    margin-top: 18px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background:
+      linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.055) 1px, transparent 1px),
+      rgba(255,255,255,.04);
+    background-size: 68px 52px;
+  }
+
+  .chart-line {
+    position: relative;
+    height: 160px;
+    margin-top: 34px;
+  }
+
+  .chart-line::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    top: 82px;
+    height: 3px;
+    background: linear-gradient(90deg, #35d18d, #38d7f7, #ffc76a);
+    transform: rotate(-7deg);
+    box-shadow: 0 0 22px rgba(56, 215, 247, 0.38);
+  }
+
+  .case-detail-hero {
+    position: absolute;
+    left: 104px;
+    top: 178px;
+    width: 1712px;
+    height: 360px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+  }
+
+  .case-detail-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(4, 25, 33, 0.86), rgba(4, 25, 33, 0.38), rgba(4, 25, 33, 0.18));
+  }
+
+  .case-detail-copy {
+    position: absolute;
+    left: 152px;
+    top: 232px;
+    width: 690px;
+    z-index: 2;
+  }
+
+  .case-detail-grid {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    bottom: 104px;
+    display: grid;
+    grid-template-columns: 1.05fr 1.25fr 1fr;
+    gap: 20px;
+  }
+
+  .case-detail-card {
+    min-height: 332px;
+    padding: 30px;
+  }
+
+  .case-detail-card h2 {
+    margin-top: 14px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .case-detail-card p,
+  .case-detail-card li {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .case-detail-card ul {
+    margin: 22px 0 0;
+    padding-left: 18px;
+  }
+
+  .article-page {
+    position: absolute;
+    left: 104px;
+    right: 104px;
+    top: 176px;
+    bottom: 104px;
+    display: grid;
+    grid-template-columns: 680px 1fr;
+    gap: 28px;
+  }
+
+  .article-aside,
+  .article-body {
+    padding: 34px;
+  }
+
+  .article-body h1 {
+    font-size: 48px;
+    line-height: 1.14;
+    font-weight: 640;
+  }
+
+  .article-section {
+    margin-top: 26px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .article-section strong {
+    display: block;
+    font-size: 22px;
+    font-weight: 560;
+  }
+
+  .article-section p {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .service-detail-copy {
+    position: absolute;
+    left: 104px;
+    top: 180px;
+    width: 720px;
+  }
+
+  .service-detail-panel {
+    position: absolute;
+    right: 104px;
+    top: 190px;
+    width: 720px;
+    height: 600px;
+    padding: 34px;
+  }
+
+  .handoff-stack {
+    display: grid;
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .handoff-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 18px;
+    align-items: center;
+    min-height: 82px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.045);
+  }
+
+  .handoff-item b {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #17b7dc, #42d596);
+  }
+
+  .handoff-item strong {
+    display: block;
+    font-size: 19px;
+    font-weight: 560;
+  }
+
+  .handoff-item span {
+    display: block;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <section class="page " aria-label="坦隆环境官网整套页面 - 核心技术">
+    <img class="bg" src="../assets/tanlong-hero-mill.png" alt="" />
+    <div class="shade" style="background: radial-gradient(circle at 78% 22%, rgba(57, 216, 255, 0.22), transparent 27%), linear-gradient(90deg, rgba(3, 22, 31, 0.96) 0%, rgba(6, 39, 52, 0.82) 35%, rgba(12, 68, 75, 0.42) 65%, rgba(4, 22, 31, 0.28) 100%), linear-gradient(180deg, rgba(4, 19, 27, 0.18), rgba(2, 15, 22, 0.76));" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="scanline" aria-hidden="true"></div>
+    
+    <header>
+      <div class="brand-lockup" aria-label="坦隆环境 Tanlong Environment">
+        <img class="brand-logo" src="../assets/tanlong-logo-full.svg" alt="坦隆环境 Tanlong Environment" />
+        <div class="brand-slogan">
+          <strong>工业绿色低碳的数智赋能者</strong>
+          <span>LOW-CARBON INDUSTRIAL SYSTEMS</span>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <span class="">网站首页</span><span class="">产品方案</span><span class="active">核心技术</span><span class="">案例中心</span><span class="">关于我们</span><span class="">资源中心</span><span class="">联系我们</span>
+      </nav>
+      <div class="stock">信用资质<strong>AAA</strong></div>
+      <div class="search" aria-hidden="true"></div>
+    </header>
+  
+    
+    <div class="side-rail" aria-hidden="true">
+      <span class="rail-dot ">首</span><span class="rail-dot ">方</span><span class="rail-dot active">技</span><span class="rail-dot ">案</span><span class="rail-dot ">关</span><span class="rail-dot ">资</span><span class="rail-dot ">询</span>
+    </div>
+  
+    
+      <main class="tech-copy fit-check">
+        <div class="eyebrow">CORE TECHNOLOGY</div>
+        <h1 class="page-title">全球首创钢渣全流程<br />干法余热回收利用</h1>
+        <p class="lede">围绕热态钢渣的高温、粒化、换热、资源化与运行数据，形成从工艺机理到装备系统的专利组合，支撑钢铁企业降碳和资源循环。</p>
+        <div class="actions">
+          <a class="button primary" href="#">下载技术白皮书</a>
+          <a class="button secondary" href="#">预约工艺评估</a>
+        </div>
+      </main>
+      <figure class="tech-machine">
+        <img class="image-fill" src="../assets/sol-02-heat.png" alt="" />
+      </figure>
+      <section class="tech-flow glass">
+        <span class="section-label">DRY SLAG HEAT RECOVERY FLOW</span>
+        <div class="flow-line" aria-hidden="true"></div>
+        <div class="flow-items">
+          <div class="flow-item"><div class="flow-dot">01</div><strong>热态钢渣</strong><span>高温物料进入干法系统</span></div>
+          <div class="flow-item"><div class="flow-dot">02</div><strong>干法粒化</strong><span>降低湿法处理依赖</span></div>
+          <div class="flow-item"><div class="flow-dot">03</div><strong>余热回收</strong><span>膜式换热与能源回收</span></div>
+          <div class="flow-item"><div class="flow-dot">04</div><strong>资源转化</strong><span>形成高价值循环资源</span></div>
+          <div class="flow-item"><div class="flow-dot">05</div><strong>数据复盘</strong><span>运行状态与低碳指标追踪</span></div>
+        </div>
+      </section>
+      <aside class="patent-panel glass">
+        <span class="section-label">PATENT & ENGINEERING PROOF</span>
+        <div class="patent-grid">
+          <div class="patent"><strong>28</strong><span>实用新型专利</span></div>
+          <div class="patent"><strong>9</strong><span>发明专利</span></div>
+          <div class="patent"><strong>近40</strong><span>核心专利组合</span></div>
+        </div>
+      </aside>
+
+    <div class="page-no">04 / 12</div>
+  </section>
+</body>
+</html>

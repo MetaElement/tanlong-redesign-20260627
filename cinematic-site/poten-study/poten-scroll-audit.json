@@ -1,0 +1,1051 @@
+{
+  "info": {
+    "title": "博天环境集团股份有限公司",
+    "scrollY": 0,
+    "innerHeight": 1000,
+    "bodyHeight": 1000,
+    "htmlClasses": "",
+    "bodyClasses": "",
+    "fixed": [
+      {
+        "tag": "div",
+        "cls": "header",
+        "id": "",
+        "position": "fixed",
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 75,
+        "text": "网站首页 关于博天 业务概况 新闻中心 ESG践行 联系我们 投资者关系 股票代码 400210"
+      },
+      {
+        "tag": "ul",
+        "cls": "ul-ce",
+        "id": "",
+        "position": "fixed",
+        "left": 0,
+        "top": 410,
+        "width": 61,
+        "height": 180,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win0",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "内蒙古伊泰化工有限责任公司120万吨/年精细化学品示范项目化学水处理装置 项目概述 本项目是为120万吨/年精细化学品生产配套的化学水处理系统，分为脱盐水制备、"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win1",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "神华陕西甲醇下游加工项目污水生化处理装置设计、采购、施工（EPC） 项目概述 神华陕西甲醇下游加工项目有三套生产线，分别为68万吨/年MTO装置、32万吨/年高"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win2",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "神华新疆68万吨/年煤基新材料项目净水场及循环水场EPC项目 项目概述 本项目包括净水场和循环水场，净水场包括生活水处理系统、生产水处理系统、给水及消防泵站等，"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win3",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "宁东园区矿井水及煤化工废水综合利用第二阶段工艺包和工艺设备采购项目 项目概述 宁东矿区矿井水及煤化工废水处理利用项目，其中的矿井水标段可处理矿井水废水375m3"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win4",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "陕西未来能源化工有限公司榆阳区红墩污水处理厂BOT项目 项目概述 陕西未来能源化工有限公司为保证上游煤制油装置的正常运行且实现“废水零排放”，博天环境建设了榆阳"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win5",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "陕西未来能源化工有限公司兖矿榆林100万吨年煤间接液化示范项目污水处理场及回用水处理工程 项目概述 本项目为陕西未来能源化工有限公司榆横煤洁净综合利用示范项目配"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win6",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "中国神华煤制油化工有限公司鄂尔多斯煤制油分公司煤液化污水深度处理技术研究实施方案精制反渗透及MBR+RO深度处理项目 项目概述 神华鄂尔多斯煤直接液化项目是我国"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win7",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "黄石市汪仁污水处理厂BOT项目 项目概述 水厂收纳污水主要为工业废水，包含电子、冶金、纺织、印染、化学合成制药废水以及制酒废水等，水质、水量波动大，污染物种类多"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win8",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "国家能源集团宁夏煤业集团宁东园区矿井水及煤化工废水综合第二阶段项目 项目概述 宁东矿区矿井水及煤化工废水处理利用项目是宁煤的环保1号工程，该项目于2018年建设"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win9",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "广西华谊能源化工有限公司工业气体岛项目 项目概述 博天环境服务广西华谊钦州项目的领域覆盖工业水、给水站、脱盐水站、循环水站和污水站范围内的土建、设备以及其他相关"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win10",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "神华包头煤制烯烃项目污水处理场EPC总承包 项目概述 神华包头煤化工有限责任公司建设有180万吨/年煤制甲醇、60万吨/年MTO、30万吨聚乙烯、30万吨/年聚"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win11",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "北京市小红门再生水厂及再生水利用工程（60万m³/d）项目系统设备采购 项目概述 北京市小红门再生水厂工程设计规模为60万m³/d，出水主要用于北京市内的河湖补"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win12",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "普宁市英歌山（大坝）、麒麟镇、南径镇污水处理厂及配套管网PPP项目 项目概述 普宁博华水务有限公司成立于 2018 年 8 月，当年 9 月与普宁市政府签署特许"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win13",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "汝州市第三水厂PPP项目 项目概述 汝州市第三自来水厂采用 PPP 模式建设，项目分为输水/厂区/配水三个部分工程。其中厂区占地 84.59 亩，水厂处理规模为"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win14",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "石首市城东污水处理厂 项目概述 2018年2月由博天环境集团股份有限公司和石首市住房城乡建设局共同出资成立石首博华水务有限公司，负责石首市城东污水处理厂及配套管"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win15",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "吴忠水环境治理项目 项目概述 该项目于2016年建设，着力解决了吴忠市第一、二、三污水处理厂和第一污水处理厂再生水工程原部分构建设计标准偏低，部分水处理设备能耗"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win16",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "合肥滨湖新区塘西河（宿松路橡胶坝-徽州大道闸坝）水质治理工程 项目概述 通过构建SYD全生态系统（微生态系统+沉水植物系统+挺水植物系统+水生动物系统）等技术体"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win17",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "紫竹半岛兰香湖水生态工程 项目概述 通过构建SYD全生态系统（生物基网+底部生物载体+一体化多效澄清系统）等技术体系，配合SYD集约化水生态系统构建技术，辅以水"
+      },
+      {
+        "tag": "div",
+        "cls": "m-details js-popup",
+        "id": "m-win18",
+        "position": "fixed",
+        "left": 0,
+        "top": -1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "海口市福创溪-大排沟水环境综合治理PPP项目 项目概述 福创溪-大排沟项目的大排沟段直经桂林洋热带农业园，汇入福创溪下游，是桂林洋水系主要的入海口，该项目应用了"
+      }
+    ],
+    "candidates": [
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "menuBtn",
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "ul",
+        "id": "",
+        "cls": "nav",
+        "left": 538,
+        "top": 0,
+        "width": 663,
+        "height": 77,
+        "text": "网站首页 关于博天 业务概况 新闻中心 ESG践行 联系我们 投资者关系"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-container swiper-container-initialized swiper-container-vertical",
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 1000,
+        "text": "用科技创造绿色未来 Create a green future with technology. 构铸天人合一的美好环境 Build a harmonious environmen"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-wrapper swiper-wrapper1",
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 1000,
+        "text": "用科技创造绿色未来 Create a green future with technology. 构铸天人合一的美好环境 Build a harmonious environmen"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide g-con section1 swiper-slide-active",
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 1000,
+        "text": "用科技创造绿色未来 Create a green future with technology. 构铸天人合一的美好环境 Build a harmonious environmen"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "banner slick-initialized slick-slider slick-dotted",
+        "left": 0,
+        "top": 0,
+        "width": 1440,
+        "height": 1000,
+        "text": "用科技创造绿色未来 Create a green future with technology. 构铸天人合一的美好环境 Build a harmonious environmen"
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": -4170,
+        "top": 698,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": -2730,
+        "top": 698,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": -1290,
+        "top": 669,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": 150,
+        "top": 681,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": 1590,
+        "top": 698,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": 3030,
+        "top": 698,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "cls": "link bannerNext",
+        "left": 4470,
+        "top": 698,
+        "width": 34,
+        "height": 34,
+        "text": ""
+      },
+      {
+        "tag": "ul",
+        "id": "",
+        "cls": "slick-dots",
+        "left": 0,
+        "top": 933,
+        "width": 1440,
+        "height": 30,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "circle left",
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "circle left",
+        "left": 0,
+        "top": 0,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "circle left",
+        "left": 748,
+        "top": 928,
+        "width": 39,
+        "height": 39,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide g-con section2 swiper-slide-next",
+        "left": 0,
+        "top": 1000,
+        "width": 1440,
+        "height": 1000,
+        "text": "30+ 专注环境治理 50+ 分子公司 800+ 员工人数 200+ 专利技术 500+ 标杆项目"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide g-con section3",
+        "left": 0,
+        "top": 2000,
+        "width": 1440,
+        "height": 1000,
+        "text": "工业水系统综合服务 博天环境在水业关联的环境领域，通过对品质的坚守建立了良好的口碑和市场影响力，公司拥有多项行业壹级、甲级资质，丰富的业绩经验，杰出的核心团队和技术能力，奠定了卓越"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide g-con section5",
+        "left": 0,
+        "top": 3000,
+        "width": 1440,
+        "height": 1000,
+        "text": "232022-12 博天环境：重整下的重构 12月8日，博天环境发布公告称，公司重整案第一次债权人会议表决通过《博天环境集团股份有限公司重整计划》，出资人组会议亦表决通过《博天环境"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper mySwiper m-bana5 m-bana5_1 swiper-container-initialized swiper-container-horizontal",
+        "left": 450,
+        "top": 3251,
+        "width": 859,
+        "height": 538,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-wrapper",
+        "left": 450,
+        "top": 3296,
+        "width": 859,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-active",
+        "left": 450,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-next",
+        "left": 736,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1023,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1309,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1595,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1882,
+        "top": 3296,
+        "width": 286,
+        "height": 433,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-next",
+        "left": 1218,
+        "top": 3771,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-prev swiper-button-disabled",
+        "left": 1106,
+        "top": 3771,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-pagination swiper-pagination-bullets swiper-pagination-bullets-dynamic",
+        "left": 450,
+        "top": 3771,
+        "width": 70,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main",
+        "left": 476,
+        "top": 3771,
+        "width": 8,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active-next",
+        "left": 491,
+        "top": 3772,
+        "width": 5,
+        "height": 5,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-notification",
+        "left": 450,
+        "top": 3251,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper mySwiper m-bana5 m-bana5_2 swiper-container-initialized swiper-container-horizontal",
+        "left": 450,
+        "top": 3789,
+        "width": 859,
+        "height": 538,
+        "text": "232022-12 博天环境：重整下的重构 12月8日，博天环境发布公告称，公司重整案第一次债权人会议表决通过《博天环境集团股份有限公司重整计划》，出资人组会议亦表决通过《博天环境"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-wrapper",
+        "left": 450,
+        "top": 3834,
+        "width": 859,
+        "height": 433,
+        "text": "232022-12 博天环境：重整下的重构 12月8日，博天环境发布公告称，公司重整案第一次债权人会议表决通过《博天环境集团股份有限公司重整计划》，出资人组会议亦表决通过《博天环境"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-active",
+        "left": 450,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "232022-12 博天环境：重整下的重构 12月8日，博天环境发布公告称，公司重整案第一次债权人会议表决通过《博天环境集团股份有限公司重整计划》，出资人组会议亦表决通过《博天环境"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-next",
+        "left": 736,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "112018-11 《21世纪经济报道》丨博天环境副总裁丘文涛： 助力制造业打造环保竞争力 博天环境(603603.SH)副总裁丘文涛在“制造业的核心竞争力”圆桌对话中指出，中国在"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1023,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "042018-11 《GWI专题报道》丨博天携手高频 助力中国蓬勃发展的集成电路产业 中国集成电路产业正蓬勃发展，而为其配套的高技术水处理领域也迎来新机遇。2018年11月，博天环"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1309,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "292018-10 《中国证券报》丨博天环境前三季扣非净利1.43亿元 同比增171% 博天环境(603603.SH)10月29日晚间发布三季报,前三季度实现营业收入29.20亿元"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1595,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "262018-09 《中国水网》丨中环膜：瞄准方向，做好品质，专注膜法水处理应用 自“十二五”起，国家大力促进资源循环利用及节能减排，一系列国家规划相继出台推动膜法水处理的发展。污"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1882,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "122018-09 《21世纪经济报道》丨博天收购高频股权获批 共拓集成电路水处理百亿市场 12日晚，博天环境(603603.SH)发布公告称，公司此前宣布的重大资产重组事项获得证"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-next",
+        "left": 1218,
+        "top": 4309,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-prev swiper-button-disabled",
+        "left": 1106,
+        "top": 4309,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-pagination swiper-pagination-bullets swiper-pagination-bullets-dynamic",
+        "left": 450,
+        "top": 4309,
+        "width": 70,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main",
+        "left": 476,
+        "top": 4309,
+        "width": 8,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active-next",
+        "left": 491,
+        "top": 4310,
+        "width": 5,
+        "height": 5,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-notification",
+        "left": 450,
+        "top": 3789,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper mySwiper m-bana5 m-bana5_2 swiper-container-initialized swiper-container-horizontal",
+        "left": 450,
+        "top": 3789,
+        "width": 859,
+        "height": 538,
+        "text": "202025-10 三十而砺，羽你同行 | 博天环境2025年度羽毛球赛燃情开战 MORE + 202024-01 风从氢动 乘风而行 | 博天环境氢能业务培训会完美收官 1月18"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-wrapper",
+        "left": 450,
+        "top": 3834,
+        "width": 859,
+        "height": 433,
+        "text": "202025-10 三十而砺，羽你同行 | 博天环境2025年度羽毛球赛燃情开战 MORE + 202024-01 风从氢动 乘风而行 | 博天环境氢能业务培训会完美收官 1月18"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-active",
+        "left": 450,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "202025-10 三十而砺，羽你同行 | 博天环境2025年度羽毛球赛燃情开战 MORE +"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-next",
+        "left": 736,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "202024-01 风从氢动 乘风而行 | 博天环境氢能业务培训会完美收官 1月18日，博天环境在30周年启动仪式后，随即开启了氢能业务培训会，旨在明确公司氢能业务的战略发展方向，"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1023,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "232023-10 携手并肩 砥砺前行 | 项目管理人员培训活动圆满完成 为进一步促进项目与项目、项目与集团管理部门之间的分享交流，提升项目管理团队各专业知识技能。博天环境在10月"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1309,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "292023-09 我们的文化季 | 中秋手作活动圆满完成 月满中秋，阖家团圆。在这个特殊的节日，博天环境为员工精心准备了一场别开生面的中秋手作活动，一同分享团圆之情，传承中秋文化"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1595,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "302023-06 聚力同行 共赢未来 | 运营项目公司负责人培训成功举办 6月30日，博天环境集团股份有限公司“聚力同行 共赢未来——2023年运营项目公司负责人培训”会议顺利召"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1882,
+        "top": 3834,
+        "width": 286,
+        "height": 433,
+        "text": "292023-06 忆铁军精神 铸利剑团队 | 博天环境主题党日活动圆满完成 2023年6月29日，在即将迎来中国共产党102周年华诞之际，为引导员工重温党的百年辉煌历史，感受党的"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-next",
+        "left": 1218,
+        "top": 4309,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-button-prev swiper-button-disabled",
+        "left": 1106,
+        "top": 4309,
+        "width": 72,
+        "height": 18,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-pagination swiper-pagination-bullets swiper-pagination-bullets-dynamic",
+        "left": 450,
+        "top": 4309,
+        "width": 70,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active swiper-pagination-bullet-active-main",
+        "left": 476,
+        "top": 4309,
+        "width": 8,
+        "height": 8,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-pagination-bullet swiper-pagination-bullet-active-next",
+        "left": 491,
+        "top": 4310,
+        "width": 5,
+        "height": 5,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-notification",
+        "left": 450,
+        "top": 3789,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide g-con section6",
+        "left": 0,
+        "top": 4000,
+        "width": 1440,
+        "height": 1000,
+        "text": "北京市小红门再生水厂及再生水利用工程（60万M³/D）项目系统设备采购 北京市小红门再生水厂工程设计规模为60万M³/D，出水主要用于北京市内的河湖补水、工业回用、城市杂用等。再生"
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper mySwiper m-bana6 swiper-container-initialized swiper-container-horizontal swiper-container-free-mode",
+        "left": 75,
+        "top": 4346,
+        "width": 1290,
+        "height": 439,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-wrapper",
+        "left": 75,
+        "top": 4346,
+        "width": 1290,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-active",
+        "left": 75,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide swiper-slide-next",
+        "left": 720,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 1365,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 2010,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 2655,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 3300,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 3945,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 4590,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 5235,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 5880,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-slide",
+        "left": 6525,
+        "top": 4346,
+        "width": 645,
+        "height": 389,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-scrollbar",
+        "left": 88,
+        "top": 4776,
+        "width": 1264,
+        "height": 5,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper-scrollbar-drag",
+        "left": 88,
+        "top": 4763,
+        "width": 230,
+        "height": 30,
+        "text": ""
+      },
+      {
+        "tag": "span",
+        "id": "",
+        "cls": "swiper-notification",
+        "left": 75,
+        "top": 4346,
+        "width": 0,
+        "height": 0,
+        "text": ""
+      },
+      {
+        "tag": "div",
+        "id": "",
+        "cls": "swiper mySwiper m-bana6 swiper-container-initialized swiper-container-horizontal swiper-container-free-mode",
+        "left": 75,
+        "top": 4784,
+        "width": 1290,
+        "height": 439,
+        "text": "北京市小红门再生水厂及再生水利用工程（60万M³/D）项目系统设备采购 北京市小红门再生水厂工程设计规模为60万M³/D，出水主要用于北京市内的河湖补水、工业回用、城市杂用等。再生"
+      }
+    ]
+  },
+  "logs": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: net::ERR_CONNECTION_CLOSED"
+    }
+  ]
+}

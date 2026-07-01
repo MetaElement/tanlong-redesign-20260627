@@ -1,0 +1,1707 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>坦隆环境官网动态视觉原型</title>
+  <meta name="description" content="坦隆环境官网动态首页原型：首屏 Hero 轮播与纵向吸屏大场景分离。" />
+  <style>
+    :root {
+      --ink: #061923;
+      --deep: #082f37;
+      --paper: #ffffff;
+      --mist: rgba(255, 255, 255, 0.78);
+      --muted: rgba(255, 255, 255, 0.64);
+      --line: rgba(255, 255, 255, 0.26);
+      --cyan: #44d7e5;
+      --green: #62c982;
+      --gold: #d8c590;
+      --hero-duration: 7800ms;
+      --ease: cubic-bezier(0.32, 0.72, 0, 1);
+      --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      height: 100%;
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+      background: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100%;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      font-variant-numeric: tabular-nums;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      appearance: none;
+    }
+
+    .skip-link {
+      position: fixed;
+      left: 20px;
+      top: -64px;
+      z-index: 40;
+      padding: 10px 16px;
+      color: #fff;
+      background: #07333d;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .skip-link:focus {
+      top: 18px;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 9;
+      pointer-events: none;
+      opacity: 0.045;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.42) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.22) 1px, transparent 1px);
+      background-size: 54px 54px, 54px 54px;
+      mix-blend-mode: screen;
+      mask-image: linear-gradient(90deg, transparent 0, #000 18%, #000 82%, transparent 100%);
+    }
+
+    .brand-bar {
+      position: fixed;
+      left: 5.4vw;
+      right: 5.4vw;
+      top: 30px;
+      z-index: 22;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      transition:
+        color 500ms var(--ease),
+        border-color 500ms var(--ease),
+        background 500ms var(--ease),
+        backdrop-filter 500ms var(--ease);
+    }
+
+    body[data-tone="light"] .brand-bar {
+      color: #0d2d36;
+      border-color: rgba(8, 47, 55, 0.16);
+      background: rgba(255, 255, 255, 0.34);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      min-width: 380px;
+    }
+
+    .brand img {
+      display: block;
+      width: 308px;
+      height: 54px;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.28));
+      transition: filter 500ms var(--ease);
+    }
+
+    body[data-tone="light"] .brand img {
+      filter: none;
+    }
+
+    .brand-note {
+      padding-left: 22px;
+      border-left: 1px solid currentColor;
+      color: currentColor;
+      opacity: 0.72;
+      font-size: 12px;
+      line-height: 1.45;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+    }
+
+    .nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      color: currentColor;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    .nav button {
+      position: relative;
+      padding: 0;
+      border: 0;
+      color: inherit;
+      background: transparent;
+      cursor: pointer;
+      opacity: 0.75;
+      transition: opacity 380ms var(--ease), transform 380ms var(--ease);
+    }
+
+    .nav button::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -31px;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background: currentColor;
+      transition: transform 520ms var(--ease);
+    }
+
+    .nav button:hover,
+    .nav button[aria-current="true"] {
+      opacity: 1;
+    }
+
+    .nav button[aria-current="true"]::after {
+      transform: scaleX(1);
+    }
+
+    .credential {
+      margin-left: 36px;
+      padding-left: 28px;
+      min-width: 94px;
+      border-left: 1px solid currentColor;
+      color: currentColor;
+      opacity: 0.72;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .credential strong {
+      display: block;
+      margin-top: 8px;
+      color: currentColor;
+      opacity: 1;
+      font-size: 22px;
+      letter-spacing: 0.03em;
+    }
+
+    .site-flow {
+      position: relative;
+      width: 100%;
+    }
+
+    .snap-section {
+      position: relative;
+      min-height: 100svh;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      isolation: isolate;
+      background: #061923;
+    }
+
+    .section-bg,
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .section-bg img,
+    .hero-slide img {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.055);
+      filter: saturate(1.04) contrast(0.98) brightness(0.98);
+      transition: transform 1600ms var(--ease), filter 1200ms var(--ease), opacity 900ms var(--ease);
+      will-change: transform;
+    }
+
+    .snap-section.is-visible .section-bg img {
+      transform: scale(1.012);
+      animation: section-drift 14s linear both;
+    }
+
+    .hero-slide.is-hero-active img {
+      transform: scale(1.018);
+      animation: hero-zoom var(--hero-duration) linear both;
+    }
+
+    body.hero-paused .hero-slide.is-hero-active img {
+      animation-play-state: paused;
+    }
+
+    .section-bg.is-soft img {
+      filter: saturate(1.06) contrast(0.96) brightness(0.92) blur(1.4px);
+      transform: scale(1.07);
+    }
+
+    .section-bg.align-right img {
+      object-position: 65% center;
+    }
+
+    .section-bg.align-left img {
+      object-position: 34% center;
+    }
+
+    .veil {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(3, 20, 27, 0.68) 0%, rgba(3, 20, 27, 0.38) 28%, rgba(3, 20, 27, 0.04) 56%, rgba(3, 20, 27, 0.04) 100%),
+        linear-gradient(180deg, rgba(3, 20, 27, 0.16) 0%, rgba(3, 20, 27, 0.04) 45%, rgba(3, 20, 27, 0.26) 100%);
+    }
+
+    .veil.right-copy {
+      background:
+        linear-gradient(90deg, rgba(3, 20, 27, 0.02) 0%, rgba(3, 20, 27, 0.08) 44%, rgba(3, 20, 27, 0.4) 74%, rgba(3, 20, 27, 0.74) 100%),
+        linear-gradient(180deg, rgba(3, 20, 27, 0.1) 0%, rgba(3, 20, 27, 0.04) 50%, rgba(3, 20, 27, 0.2) 100%);
+    }
+
+    .veil.clear {
+      background:
+        linear-gradient(90deg, rgba(4, 32, 37, 0.48) 0%, rgba(4, 32, 37, 0.16) 31%, rgba(4, 32, 37, 0.02) 68%),
+        linear-gradient(180deg, rgba(4, 32, 37, 0.08), rgba(4, 32, 37, 0.18));
+    }
+
+    .section-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0.34;
+      background:
+        linear-gradient(115deg, transparent 0 46%, rgba(255, 255, 255, 0.24) 46.2%, transparent 46.5%),
+        linear-gradient(115deg, transparent 0 62%, rgba(68, 215, 229, 0.14) 62.1%, transparent 62.38%);
+      transform: translate3d(-3%, 0, 0);
+      transition: transform 1800ms var(--ease), opacity 1000ms var(--ease);
+    }
+
+    .snap-section.is-visible .section-lines {
+      transform: translate3d(0, 0, 0);
+      opacity: 0.46;
+    }
+
+    .hero-slide {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1100ms var(--ease), visibility 1100ms step-end;
+    }
+
+    .hero-slide.is-hero-active {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1100ms var(--ease), visibility 0ms;
+    }
+
+    .section-inner {
+      position: relative;
+      z-index: 4;
+      min-height: 100svh;
+      width: min(1500px, 100%);
+      margin: 0 auto;
+      padding: 168px 5.4vw 88px;
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(360px, 1fr);
+      gap: 68px;
+      align-items: center;
+    }
+
+    .section-inner.single {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding-bottom: 112px;
+    }
+
+    .section-inner.right {
+      grid-template-columns: minmax(400px, 1fr) minmax(380px, 0.78fr);
+    }
+
+    .copy {
+      max-width: 760px;
+      color: #fff;
+    }
+
+    .right .copy {
+      grid-column: 2;
+    }
+
+    .kicker,
+    .copy h1,
+    .copy h2,
+    .copy p,
+    .minimal-actions,
+    .evidence-line,
+    .float-card,
+    .proof-strip,
+    .tech-orbit,
+    .contact-plate {
+      opacity: 0;
+      transform: translate3d(0, 40px, 0);
+      filter: blur(12px);
+      transition:
+        opacity 900ms var(--ease),
+        transform 900ms var(--ease),
+        filter 900ms var(--ease);
+    }
+
+    .is-visible .kicker,
+    .is-visible .copy h1,
+    .is-visible .copy h2,
+    .is-visible .copy p,
+    .is-visible .minimal-actions,
+    .is-visible .evidence-line,
+    .is-visible .float-card,
+    .is-visible .proof-strip,
+    .is-visible .tech-orbit,
+    .is-visible .contact-plate,
+    .hero-slide.is-hero-active .kicker,
+    .hero-slide.is-hero-active .copy h1,
+    .hero-slide.is-hero-active .copy p,
+    .hero-slide.is-hero-active .minimal-actions,
+    .hero-slide.is-hero-active .evidence-line {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      filter: blur(0);
+    }
+
+    .is-visible .copy h1,
+    .is-visible .copy h2,
+    .hero-slide.is-hero-active .copy h1 {
+      transition-delay: 100ms;
+    }
+
+    .is-visible .copy p,
+    .hero-slide.is-hero-active .copy p {
+      transition-delay: 210ms;
+    }
+
+    .is-visible .minimal-actions,
+    .hero-slide.is-hero-active .minimal-actions {
+      transition-delay: 330ms;
+    }
+
+    .is-visible .evidence-line,
+    .hero-slide.is-hero-active .evidence-line {
+      transition-delay: 460ms;
+    }
+
+    .float-card:nth-child(2) {
+      transition-delay: 120ms;
+    }
+
+    .float-card:nth-child(3) {
+      transition-delay: 240ms;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 54px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+    }
+
+    h1,
+    h2 {
+      margin: 26px 0 0;
+      font-family: var(--serif);
+      font-size: 88px;
+      line-height: 1.04;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-wrap: balance;
+      text-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    h2 {
+      font-size: 72px;
+    }
+
+    .copy p {
+      width: min(690px, 100%);
+      margin: 28px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 21px;
+      line-height: 1.78;
+      font-weight: 350;
+      text-wrap: pretty;
+    }
+
+    .minimal-actions {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 40px;
+    }
+
+    .text-link,
+    .quiet-button {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .text-link::after {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.78);
+      transform-origin: left center;
+      transition: transform 560ms var(--ease), background 560ms var(--ease);
+    }
+
+    .text-link:hover::after {
+      transform: scaleX(1.36);
+      background: var(--cyan);
+    }
+
+    .quiet-button {
+      min-width: 144px;
+      height: 46px;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      background: rgba(255, 255, 255, 0.05);
+      transition: transform 500ms var(--ease), border-color 500ms var(--ease), background 500ms var(--ease);
+    }
+
+    .quiet-button:hover {
+      transform: translate3d(0, -2px, 0);
+      border-color: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .evidence-line {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .evidence-line span {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    .evidence-line b {
+      color: #fff;
+      font-size: 34px;
+      line-height: 1;
+      font-weight: 620;
+    }
+
+    .poetry-mark {
+      position: absolute;
+      z-index: 4;
+      right: 5.4vw;
+      bottom: 10vh;
+      writing-mode: vertical-rl;
+      color: rgba(255, 255, 255, 0.42);
+      font-family: var(--serif);
+      font-size: 18px;
+      letter-spacing: 0.24em;
+      opacity: 0;
+      transform: translate3d(0, 18px, 0);
+      transition: opacity 1100ms var(--ease), transform 1100ms var(--ease);
+    }
+
+    .right .poetry-mark {
+      left: 5.4vw;
+      right: auto;
+    }
+
+    .is-visible .poetry-mark,
+    .hero-slide.is-hero-active .poetry-mark {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition-delay: 560ms;
+    }
+
+    .hero-controls {
+      position: absolute;
+      left: 50%;
+      bottom: 32px;
+      z-index: 7;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-dot {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      color: #fff;
+      transition: width 420ms var(--ease), opacity 420ms var(--ease), transform 420ms var(--ease);
+    }
+
+    .hero-dot:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero-line {
+      display: block;
+      width: 42px;
+      height: 2px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.38);
+      overflow: hidden;
+      transition: width 420ms var(--ease), background 420ms var(--ease), opacity 420ms var(--ease);
+    }
+
+    .hero-line::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      transform: scaleX(0);
+      transform-origin: left center;
+      background: #fff;
+    }
+
+    .active-ring {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      display: none;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(5, 32, 40, 0.14);
+      box-shadow: 0 12px 34px rgba(4, 24, 32, 0.18);
+    }
+
+    .active-ring svg {
+      position: absolute;
+      inset: 0;
+      width: 46px;
+      height: 46px;
+      overflow: visible;
+      transform: rotate(-90deg);
+    }
+
+    .ring-base,
+    .ring-progress {
+      fill: none;
+      stroke-width: 1.7;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .ring-base {
+      stroke: rgba(255, 255, 255, 0.34);
+    }
+
+    .ring-progress {
+      stroke: #fff;
+      stroke-linecap: round;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+
+    .pause-mark,
+    .play-mark {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    .pause-mark {
+      grid-template-columns: repeat(2, 3px);
+      gap: 4px;
+    }
+
+    .pause-mark::before,
+    .pause-mark::after {
+      content: "";
+      width: 3px;
+      height: 13px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .play-mark {
+      display: none;
+      width: 0;
+      height: 0;
+      margin-left: 2px;
+      border-top: 7px solid transparent;
+      border-bottom: 7px solid transparent;
+      border-left: 11px solid currentColor;
+    }
+
+    .hero-dot[aria-current="true"] {
+      width: 54px;
+      opacity: 1;
+    }
+
+    .hero-dot[aria-current="true"] .hero-line {
+      display: none;
+    }
+
+    .hero-dot[aria-current="true"] .active-ring {
+      display: grid;
+    }
+
+    .hero-dot[aria-current="true"] .ring-progress {
+      animation: ring-progress var(--hero-duration) linear forwards;
+    }
+
+    body.hero-paused .hero-dot[aria-current="true"] .ring-progress {
+      animation-play-state: paused;
+    }
+
+    body.hero-paused .hero-dot[aria-current="true"] .pause-mark {
+      display: none;
+    }
+
+    body.hero-paused .hero-dot[aria-current="true"] .play-mark {
+      display: block;
+    }
+
+    .section-rail {
+      position: fixed;
+      left: 26px;
+      top: 50%;
+      z-index: 24;
+      display: grid;
+      gap: 8px;
+      transform: translateY(-50%);
+    }
+
+    .rail-button {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border: 0;
+      color: rgba(255, 255, 255, 0.76);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .rail-button::before {
+      content: "";
+      position: absolute;
+      inset: 9px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 14px 34px rgba(1, 20, 28, 0.18);
+      transition:
+        inset 420ms var(--ease),
+        background 420ms var(--ease),
+        box-shadow 420ms var(--ease),
+        transform 420ms var(--ease);
+    }
+
+    .rail-button::after {
+      display: none;
+    }
+
+    .rail-button svg {
+      position: relative;
+      z-index: 1;
+      width: 19px;
+      height: 19px;
+      color: #56818b;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: color 420ms var(--ease), transform 420ms var(--ease);
+    }
+
+    .rail-button .label {
+      position: absolute;
+      left: 60px;
+      top: 50%;
+      min-width: 72px;
+      transform: translate3d(-8px, -50%, 0);
+      opacity: 0;
+      pointer-events: none;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+    }
+
+    body[data-tone="light"] .rail-button .label {
+      color: rgba(8, 47, 55, 0.86);
+    }
+
+    .rail-button:hover .label {
+      opacity: 1;
+      transform: translate3d(0, -50%, 0);
+    }
+
+    .rail-button[aria-current="true"] {
+      color: var(--cyan);
+    }
+
+    .rail-button[aria-current="true"]::before {
+      inset: 6px;
+      background: linear-gradient(135deg, rgba(68, 215, 229, 0.96), rgba(98, 201, 130, 0.94));
+      box-shadow: 0 18px 42px rgba(68, 215, 229, 0.32);
+      transform: rotate(45deg);
+      border-radius: 12px;
+    }
+
+    .rail-button[aria-current="true"] svg {
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .scroll-cue {
+      position: fixed;
+      right: 5.4vw;
+      bottom: 34px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: color 500ms var(--ease);
+    }
+
+    body[data-tone="light"] .scroll-cue {
+      color: rgba(8, 47, 55, 0.56);
+    }
+
+    .scroll-cue::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      animation: cue-line 1700ms var(--ease) infinite;
+    }
+
+    .page-count {
+      position: fixed;
+      right: 5.4vw;
+      top: 126px;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      transition: color 500ms var(--ease);
+    }
+
+    body[data-tone="light"] .page-count {
+      color: rgba(8, 47, 55, 0.62);
+    }
+
+    .page-count .track {
+      width: 84px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.52;
+    }
+
+    .float-stack {
+      justify-self: end;
+      width: min(430px, 100%);
+      display: grid;
+      gap: 18px;
+    }
+
+    .float-card {
+      position: relative;
+      min-height: 142px;
+      padding: 26px 28px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: rgba(7, 38, 44, 0.28);
+      backdrop-filter: blur(16px);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 24px 80px rgba(1, 20, 28, 0.22);
+      overflow: hidden;
+    }
+
+    .float-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--cyan), var(--green));
+      opacity: 0.9;
+    }
+
+    .float-card small {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .float-card strong {
+      display: block;
+      margin-top: 14px;
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .float-card p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .proof-strip {
+      align-self: end;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      width: min(700px, 100%);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+    }
+
+    .proof-strip div {
+      padding: 26px 28px;
+      background: rgba(4, 28, 36, 0.22);
+    }
+
+    .proof-strip b {
+      display: block;
+      color: #fff;
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 650;
+    }
+
+    .proof-strip span {
+      display: block;
+      margin-top: 12px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 14px;
+    }
+
+    .tech-orbit {
+      position: relative;
+      justify-self: end;
+      width: min(560px, 100%);
+      min-height: 420px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.04)),
+        rgba(4, 25, 33, 0.24);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    .tech-orbit::before,
+    .tech-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 48px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      transform: rotate(-16deg) scaleX(1.22);
+    }
+
+    .tech-orbit::after {
+      inset: 92px;
+      border-color: rgba(68, 215, 229, 0.26);
+      transform: rotate(18deg) scaleX(1.42);
+    }
+
+    .tech-node {
+      position: absolute;
+      display: grid;
+      gap: 7px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .tech-node::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 28px rgba(68, 215, 229, 0.8);
+    }
+
+    .tech-node small {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .tech-node.one {
+      left: 62px;
+      top: 86px;
+    }
+
+    .tech-node.two {
+      right: 76px;
+      top: 120px;
+    }
+
+    .tech-node.three {
+      left: 130px;
+      bottom: 82px;
+    }
+
+    .tech-node.four {
+      right: 92px;
+      bottom: 70px;
+    }
+
+    .contact-plate {
+      justify-self: end;
+      width: min(470px, 100%);
+      padding: 34px 36px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(16px);
+    }
+
+    .contact-plate dl {
+      display: grid;
+      gap: 20px;
+      margin: 0;
+    }
+
+    .contact-plate div {
+      display: grid;
+      gap: 7px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .contact-plate div:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .contact-plate dt {
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .contact-plate dd {
+      margin: 0;
+      color: #fff;
+      font-size: 22px;
+      font-weight: 560;
+      letter-spacing: 0;
+    }
+
+    @keyframes section-drift {
+      from {
+        transform: scale(1.04) translate3d(0, 0, 0);
+      }
+      to {
+        transform: scale(1.012) translate3d(-1.1%, -0.55%, 0);
+      }
+    }
+
+    @keyframes hero-zoom {
+      from {
+        transform: scale(1.018) translate3d(0, 0, 0);
+      }
+      to {
+        transform: scale(1.08) translate3d(-1.15%, -0.58%, 0);
+      }
+    }
+
+    @keyframes ring-progress {
+      from {
+        stroke-dashoffset: 1;
+      }
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes cue-line {
+      0%, 100% {
+        transform: scaleX(0.72);
+        opacity: 0.45;
+      }
+      50% {
+        transform: scaleX(1.2);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1180px) {
+      .brand-bar {
+        left: 34px;
+        right: 34px;
+      }
+
+      .brand img {
+        width: 252px;
+      }
+
+      .brand-note,
+      .credential {
+        display: none;
+      }
+
+      .nav {
+        gap: 24px;
+      }
+
+      h1,
+      h2 {
+        font-size: 64px;
+      }
+
+      .section-inner {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .right .copy {
+        grid-column: 1;
+      }
+
+      .float-stack,
+      .tech-orbit,
+      .contact-plate {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 760px) {
+      html {
+        scroll-snap-type: y proximity;
+      }
+
+      .brand-bar {
+        left: 22px;
+        right: 22px;
+        top: 18px;
+        height: 64px;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 212px;
+      }
+
+      .nav,
+      .credential,
+      .brand-note,
+      .page-count {
+        display: none;
+      }
+
+      .section-inner,
+      .section-inner.single {
+        min-height: 100svh;
+        padding: 120px 24px 88px 66px;
+        display: flex;
+        align-items: flex-end;
+      }
+
+      .section-inner:not(.single) {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 24px;
+      }
+
+      .copy {
+        max-width: 100%;
+      }
+
+      h1,
+      h2 {
+        margin-top: 18px;
+        font-size: 50px;
+        line-height: 1.08;
+      }
+
+      .copy p {
+        font-size: 17px;
+        line-height: 1.68;
+      }
+
+      .minimal-actions {
+        flex-wrap: wrap;
+        margin-top: 28px;
+      }
+
+      .evidence-line {
+        gap: 16px;
+        margin-top: 30px;
+      }
+
+      .evidence-line b {
+        font-size: 27px;
+      }
+
+      .section-rail {
+        left: 8px;
+        gap: 4px;
+      }
+
+      .rail-button {
+        width: 48px;
+        height: 48px;
+      }
+
+      .rail-button .label,
+      .poetry-mark {
+        display: none;
+      }
+
+      .float-stack {
+        width: 100%;
+        gap: 12px;
+      }
+
+      .float-card {
+        min-height: 0;
+        padding: 18px 20px;
+      }
+
+      .float-card strong {
+        font-size: 23px;
+      }
+
+      .proof-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .tech-orbit,
+      .contact-plate {
+        width: 100%;
+        min-height: 310px;
+      }
+
+      .scroll-cue {
+        right: 24px;
+        bottom: 22px;
+      }
+    }
+  </style>
+</head>
+<body data-tone="dark">
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="brand-bar">
+    <div class="brand" aria-label="坦隆环境 Tanlong Environment">
+      <img src="../site-pages/assets/tanlong-logo-full.svg" alt="坦隆环境 Tanlong Environment" />
+      <div class="brand-note">工业绿色低碳的数智赋能者<br />LOW-CARBON INDUSTRIAL SYSTEMS</div>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <button type="button" class="section-jump" data-section="0" aria-current="true">网站首页</button>
+      <button type="button" class="section-jump" data-section="1">关于坦隆</button>
+      <button type="button" class="section-jump" data-section="2">产品方案</button>
+      <button type="button" class="section-jump" data-section="3">核心技术</button>
+      <button type="button" class="section-jump" data-section="4">案例中心</button>
+      <button type="button" class="section-jump" data-section="5">联系我们</button>
+    </nav>
+    <div class="credential">信用资质<strong>AAA</strong></div>
+  </header>
+
+  <nav class="section-rail" aria-label="页面章节">
+    <button type="button" class="rail-button section-jump" data-section="0" aria-label="首页" aria-current="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 11.2 12 5l7.5 6.2"/><path d="M7 10.5V19h10v-8.5"/><path d="M10 19v-5h4v5"/></svg>
+      <span class="label">首页</span>
+    </button>
+    <button type="button" class="rail-button section-jump" data-section="1" aria-label="关于">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c4.2 3.1 6.3 6.2 6.3 9.3A6.3 6.3 0 0 1 5.7 13.3C5.7 10.2 7.8 7.1 12 4Z"/><path d="M9.2 14.1c1.5.9 3.7.9 5.6 0"/></svg>
+      <span class="label">关于</span>
+    </button>
+    <button type="button" class="rail-button section-jump" data-section="2" aria-label="方案">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14"/><path d="M7 7v10h10V7"/><path d="M9.5 11h5"/><path d="M9.5 14h3.8"/><path d="M8 4h8"/></svg>
+      <span class="label">方案</span>
+    </button>
+    <button type="button" class="rail-button section-jump" data-section="3" aria-label="技术">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v5"/><path d="M12 16v5"/><path d="M4.2 7.5l4.2 2.4"/><path d="m15.6 14.1 4.2 2.4"/><path d="m4.2 16.5 4.2-2.4"/><path d="m15.6 9.9 4.2-2.4"/><circle cx="12" cy="12" r="4"/></svg>
+      <span class="label">技术</span>
+    </button>
+    <button type="button" class="rail-button section-jump" data-section="4" aria-label="案例">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19h14"/><path d="M7 19V8l5-3 5 3v11"/><path d="M10 19v-5h4v5"/><path d="M9 10h.1"/><path d="M15 10h.1"/></svg>
+      <span class="label">案例</span>
+    </button>
+    <button type="button" class="rail-button section-jump" data-section="5" aria-label="联系">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14v11H8l-3 3V6Z"/><path d="M8.5 10h7"/><path d="M8.5 13h4.8"/></svg>
+      <span class="label">联系</span>
+    </button>
+  </nav>
+
+  <div class="page-count" aria-hidden="true"><span class="current-section">01</span><span class="track"></span><span>06</span></div>
+  <div class="scroll-cue" aria-hidden="true">Scroll down</div>
+
+  <main class="site-flow" id="main-content">
+    <section class="snap-section hero-section is-visible" data-section-index="0" data-tone="dark" aria-label="首页 Hero 轮播">
+      <article class="hero-slide is-hero-active" data-hero-index="0">
+        <img src="../site-pages/assets/case-hero.png" alt="山水之间的绿色低碳钢铁工程基地" />
+        <div class="veil clear" aria-hidden="true"></div>
+        <div class="section-lines" aria-hidden="true"></div>
+        <div class="section-inner single">
+          <div class="copy">
+            <div class="kicker">Tanlong low-carbon industrial systems</div>
+            <h1>工业绿色低碳的<br />数智赋能者</h1>
+            <p>专注钢渣处理与余热回收，以全流程干法余热回收利用技术，让钢铁工业的废渣与废热回到绿色价值循环。</p>
+            <div class="minimal-actions">
+              <a class="text-link" href="#solutions">预约技术交流</a>
+              <a class="quiet-button" href="#technology">查看核心工艺</a>
+            </div>
+            <div class="evidence-line">
+              <span><b>18</b>大型钢厂</span>
+              <span><b>33</b>生产线</span>
+              <span><b>近40</b>核心专利</span>
+            </div>
+          </div>
+        </div>
+        <div class="poetry-mark">绿水青山  工业新生</div>
+      </article>
+
+      <article class="hero-slide" data-hero-index="1">
+        <img src="../site-pages/assets/hero-02-slag.png" alt="钢渣干法处理产线与高温物料" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="section-lines" aria-hidden="true"></div>
+        <div class="section-inner single">
+          <div class="copy">
+            <div class="kicker">Slag treatment and resource recovery</div>
+            <h1>把钢渣处理<br />做成清洁工艺</h1>
+            <p>以少水、少尘、连续化的工程路线，把高温钢渣从污染负担转化为可复用资源。</p>
+            <div class="minimal-actions">
+              <a class="text-link" href="#solutions">进入方案大屏</a>
+            </div>
+          </div>
+        </div>
+        <div class="poetry-mark">去浊存清  化废为材</div>
+      </article>
+
+      <article class="hero-slide" data-hero-index="2">
+        <img src="../site-pages/assets/hero-03-heat.png" alt="余热回收管网与膜式换热系统" />
+        <div class="veil right-copy" aria-hidden="true"></div>
+        <div class="section-lines" aria-hidden="true"></div>
+        <div class="section-inner single">
+          <div class="copy">
+            <div class="kicker">Heat recovery and low-carbon operation</div>
+            <h1>让高温余热<br />重新进入能源系统</h1>
+            <p>把热工设计、换热系统和低碳运行数据接入项目闭环，为钢铁企业形成长期节能收益。</p>
+            <div class="minimal-actions">
+              <a class="text-link" href="#technology">查看技术路径</a>
+            </div>
+          </div>
+        </div>
+        <div class="poetry-mark">余热入流  能源归环</div>
+      </article>
+
+      <article class="hero-slide" data-hero-index="3">
+        <img src="../site-pages/assets/sol-03-data.png" alt="低碳运行控制中心与钢铁厂区夜景" />
+        <div class="veil" aria-hidden="true"></div>
+        <div class="section-lines" aria-hidden="true"></div>
+        <div class="section-inner single">
+          <div class="copy">
+            <div class="kicker">Digital operation and verified data</div>
+            <h1>让运行数据<br />成为低碳资产</h1>
+            <p>沉淀工况、能效、设备状态和运维复盘，让每一条产线的节能收益可以被追踪、验证和持续优化。</p>
+            <div class="minimal-actions">
+              <a class="text-link" href="#technology">进入技术大屏</a>
+            </div>
+          </div>
+        </div>
+        <div class="poetry-mark">数据有迹  低碳有据</div>
+      </article>
+
+      <article class="hero-slide" data-hero-index="4">
+        <img src="../site-pages/assets/aqua-clear-bg.png" alt="清透水环境与低碳园区" />
+        <div class="veil clear" aria-hidden="true"></div>
+        <div class="section-lines" aria-hidden="true"></div>
+        <div class="section-inner single">
+          <div class="copy">
+            <div class="kicker">Project loop and long-term value</div>
+            <h1>在工业现场<br />兑现绿色价值</h1>
+            <p>从工况诊断、方案设计到工程实施与运行复盘，坦隆用可交付的工程闭环支撑钢铁企业绿色转型。</p>
+            <div class="minimal-actions">
+              <a class="text-link" href="#cases">查看工程验证</a>
+            </div>
+          </div>
+        </div>
+        <div class="poetry-mark">始于现场  归于共生</div>
+      </article>
+
+      <div class="hero-controls" aria-label="首页 Hero 轮播控制">
+        <button class="hero-dot" type="button" data-hero-jump="0" aria-label="暂停或切换到首页主张" aria-current="true">
+          <span class="hero-line"></span>
+          <span class="active-ring" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><circle class="ring-base" cx="23" cy="23" r="19" pathLength="1"></circle><circle class="ring-progress" cx="23" cy="23" r="19" pathLength="1"></circle></svg>
+            <span class="pause-mark"></span><span class="play-mark"></span>
+          </span>
+        </button>
+        <button class="hero-dot" type="button" data-hero-jump="1" aria-label="暂停或切换到钢渣处理" aria-current="false">
+          <span class="hero-line"></span>
+          <span class="active-ring" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><circle class="ring-base" cx="23" cy="23" r="19" pathLength="1"></circle><circle class="ring-progress" cx="23" cy="23" r="19" pathLength="1"></circle></svg>
+            <span class="pause-mark"></span><span class="play-mark"></span>
+          </span>
+        </button>
+        <button class="hero-dot" type="button" data-hero-jump="2" aria-label="暂停或切换到余热回收" aria-current="false">
+          <span class="hero-line"></span>
+          <span class="active-ring" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><circle class="ring-base" cx="23" cy="23" r="19" pathLength="1"></circle><circle class="ring-progress" cx="23" cy="23" r="19" pathLength="1"></circle></svg>
+            <span class="pause-mark"></span><span class="play-mark"></span>
+          </span>
+        </button>
+        <button class="hero-dot" type="button" data-hero-jump="3" aria-label="暂停或切换到数字化运行" aria-current="false">
+          <span class="hero-line"></span>
+          <span class="active-ring" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><circle class="ring-base" cx="23" cy="23" r="19" pathLength="1"></circle><circle class="ring-progress" cx="23" cy="23" r="19" pathLength="1"></circle></svg>
+            <span class="pause-mark"></span><span class="play-mark"></span>
+          </span>
+        </button>
+        <button class="hero-dot" type="button" data-hero-jump="4" aria-label="暂停或切换到工程闭环" aria-current="false">
+          <span class="hero-line"></span>
+          <span class="active-ring" aria-hidden="true">
+            <svg viewBox="0 0 46 46"><circle class="ring-base" cx="23" cy="23" r="19" pathLength="1"></circle><circle class="ring-progress" cx="23" cy="23" r="19" pathLength="1"></circle></svg>
+            <span class="pause-mark"></span><span class="play-mark"></span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <section class="snap-section" id="about" data-section-index="1" data-tone="dark" aria-label="关于坦隆">
+      <div class="section-bg align-right"><img src="../site-pages/assets/morning-green-bg.png" alt="清晨绿色低碳园区与山水环境" /></div>
+      <div class="veil" aria-hidden="true"></div>
+      <div class="section-lines" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="copy">
+          <div class="kicker">About Tanlong</div>
+          <h2>以技术让工业副产物<br />回到价值循环</h2>
+          <p>由范永平博士领衔，围绕钢铁工业环保与资源循环，沉淀干法工艺、换热系统和低碳运行数据能力。</p>
+          <div class="minimal-actions">
+            <a class="text-link" href="#solutions">了解产品方案</a>
+          </div>
+        </div>
+        <div class="proof-strip" aria-label="坦隆核心证明">
+          <div><b>AAA</b><span>企业信用资质</span></div>
+          <div><b>8亿</b><span>累计签约规模</span></div>
+          <div><b>近40</b><span>核心专利技术</span></div>
+        </div>
+      </div>
+      <div class="poetry-mark">诚信为基  创新为魂</div>
+    </section>
+
+    <section class="snap-section" id="solutions" data-section-index="2" data-tone="dark" aria-label="产品方案">
+      <div class="section-bg is-soft align-left"><img src="../site-pages/assets/sol-01-slag.png" alt="钢渣干法处理产线与高温物料" /></div>
+      <div class="veil right-copy" aria-hidden="true"></div>
+      <div class="section-lines" aria-hidden="true"></div>
+      <div class="section-inner right">
+        <div class="float-stack" aria-label="产品方案入口">
+          <article class="float-card">
+            <small>01 Slag treatment</small>
+            <strong>钢渣全流程干法处理</strong>
+            <p>减少水耗与二次污染，适配高温连续工况，面向钢厂既有产线改造。</p>
+          </article>
+          <article class="float-card">
+            <small>02 Heat recovery</small>
+            <strong>余热回收利用系统</strong>
+            <p>以膜式换热和系统集成，把释放过程中的热能转化为可利用能源。</p>
+          </article>
+          <article class="float-card">
+            <small>03 Digital operation</small>
+            <strong>低碳运行数据闭环</strong>
+            <p>沉淀工况、能效、设备状态和运维复盘，支持持续优化。</p>
+          </article>
+        </div>
+        <div class="copy">
+          <div class="kicker">Product solutions</div>
+          <h2>从废渣到能源<br />一条工程链路解决</h2>
+          <p>方案大屏保留背景中的工业现场，只把核心业务入口轻量悬浮在画面边缘，避免遮挡主视觉。</p>
+          <div class="minimal-actions">
+            <a class="text-link" href="#cases">查看落地案例</a>
+          </div>
+        </div>
+      </div>
+      <div class="poetry-mark">少水少尘  系统归环</div>
+    </section>
+
+    <section class="snap-section" id="technology" data-section-index="3" data-tone="dark" aria-label="核心技术">
+      <div class="section-bg align-right"><img src="../site-pages/assets/sol-03-data.png" alt="低碳运行控制中心与钢铁厂区夜景" /></div>
+      <div class="veil" aria-hidden="true"></div>
+      <div class="section-lines" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="copy">
+          <div class="kicker">Core technology</div>
+          <h2>让运行数据<br />成为低碳资产</h2>
+          <p>把工况、能效、设备状态、资源化质量和运维复盘沉淀为持续优化的运营视图，让项目经验可以被复用。</p>
+          <div class="evidence-line">
+            <span><b>工况</b>关键状态追踪</span>
+            <span><b>能效</b>回收与消耗</span>
+            <span><b>复盘</b>价值沉淀</span>
+          </div>
+        </div>
+        <div class="tech-orbit" aria-label="技术闭环">
+          <div class="tech-node one"><small>Measure</small>热态采集</div>
+          <div class="tech-node two"><small>Recover</small>换热回收</div>
+          <div class="tech-node three"><small>Control</small>连续控制</div>
+          <div class="tech-node four"><small>Review</small>运行复盘</div>
+        </div>
+      </div>
+      <div class="poetry-mark">数据有迹  低碳有据</div>
+    </section>
+
+    <section class="snap-section" id="cases" data-section-index="4" data-tone="dark" aria-label="工程案例">
+      <div class="section-bg align-right"><img src="../site-pages/assets/case-hero.png" alt="山水之间的低碳钢铁工程基地" /></div>
+      <div class="veil right-copy" aria-hidden="true"></div>
+      <div class="section-lines" aria-hidden="true"></div>
+      <div class="section-inner right">
+        <div></div>
+        <div class="copy">
+          <div class="kicker">Engineering proof</div>
+          <h2>18 家大型钢厂<br />33 条生产线验证</h2>
+          <p>以授权信息为边界，呈现工况、解决方案、落地规模和可复用经验，不伪造客户背书。</p>
+          <div class="evidence-line">
+            <span><b>18</b>合作钢厂</span>
+            <span><b>33</b>生产线</span>
+            <span><b>8亿</b>签约规模</span>
+          </div>
+        </div>
+      </div>
+      <div class="poetry-mark">山河为证  工程有据</div>
+    </section>
+
+    <section class="snap-section" id="contact" data-section-index="5" data-tone="dark" aria-label="联系我们">
+      <div class="section-bg align-left"><img src="../site-pages/assets/aqua-clear-bg.png" alt="清透水环境与低碳园区" /></div>
+      <div class="veil clear" aria-hidden="true"></div>
+      <div class="section-lines" aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="copy">
+          <div class="kicker">Talk to Tanlong experts</div>
+          <h2>从一次技术交流<br />进入项目闭环</h2>
+          <p>提交产线、钢渣、热能和改造目标信息，坦隆团队可进一步完成工况诊断、方案设计和工程评估。</p>
+          <div class="minimal-actions">
+            <a class="text-link" href="#">发起项目沟通</a>
+            <a class="quiet-button" href="#">下载前置信息表</a>
+          </div>
+        </div>
+        <aside class="contact-plate" aria-label="项目沟通路径">
+          <dl>
+            <div>
+              <dt>Step 01</dt>
+              <dd>产线与工况诊断</dd>
+            </div>
+            <div>
+              <dt>Step 02</dt>
+              <dd>干法处理与余热方案</dd>
+            </div>
+            <div>
+              <dt>Step 03</dt>
+              <dd>工程实施与运行复盘</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+      <div class="poetry-mark">始于沟通  归于共生</div>
+    </section>
+  </main>
+
+  <script>
+    const sections = Array.from(document.querySelectorAll(".snap-section"));
+    const sectionButtons = Array.from(document.querySelectorAll(".section-jump"));
+    const currentSectionLabel = document.querySelector(".current-section");
+    const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
+    const heroDots = Array.from(document.querySelectorAll(".hero-dot"));
+    let activeSection = 0;
+    let activeHero = 0;
+    let heroTimer = null;
+    let heroPaused = false;
+    const heroNames = ["首页主张", "钢渣处理", "余热回收", "数字化运行", "工程闭环"];
+
+    function two(value) {
+      return String(value + 1).padStart(2, "0");
+    }
+
+    function setActiveSection(index) {
+      activeSection = Math.max(0, Math.min(index, sections.length - 1));
+      const active = sections[activeSection];
+      document.body.dataset.tone = active.dataset.tone || "dark";
+      currentSectionLabel.textContent = two(activeSection);
+      sectionButtons.forEach((button) => {
+        button.setAttribute("aria-current", Number(button.dataset.section) === activeSection ? "true" : "false");
+      });
+    }
+
+    function scrollToSection(index) {
+      const target = sections[Math.max(0, Math.min(index, sections.length - 1))];
+      if (!target) return;
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function setHeroSlide(index) {
+      activeHero = (index + heroSlides.length) % heroSlides.length;
+      heroPaused = false;
+      heroSlides.forEach((slide, idx) => slide.classList.toggle("is-hero-active", idx === activeHero));
+      syncHeroControls();
+      resetHeroTimer();
+    }
+
+    function syncHeroControls() {
+      document.body.classList.toggle("hero-paused", heroPaused);
+      heroDots.forEach((dot, idx) => {
+        const isActive = idx === activeHero;
+        dot.setAttribute("aria-current", isActive ? "true" : "false");
+        dot.setAttribute(
+          "aria-label",
+          isActive
+            ? (heroPaused ? "播放当前 Hero 轮播" : "暂停当前 Hero 轮播")
+            : `切换到${heroNames[idx] || "Hero"}`
+        );
+      });
+    }
+
+    function toggleHeroPaused() {
+      heroPaused = !heroPaused;
+      syncHeroControls();
+      resetHeroTimer();
+    }
+
+    function resetHeroTimer() {
+      window.clearInterval(heroTimer);
+      if (heroPaused) return;
+      heroTimer = window.setInterval(() => {
+        if (activeSection === 0) setHeroSlide(activeHero + 1);
+      }, 7800);
+    }
+
+    window.tanlongSetHeroSlide = setHeroSlide;
+    window.tanlongToggleHeroPaused = toggleHeroPaused;
+    window.tanlongScrollToSection = scrollToSection;
+
+    sectionButtons.forEach((button) => {
+      button.addEventListener("click", () => scrollToSection(Number(button.dataset.section)));
+    });
+
+    heroDots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const target = Number(dot.dataset.heroJump);
+        if (target === activeHero) {
+          toggleHeroPaused();
+          return;
+        }
+        setHeroSlide(target);
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = Number(entry.target.dataset.sectionIndex);
+          entry.target.classList.add("is-visible");
+          setActiveSection(index);
+        }
+      });
+    }, { threshold: 0.56 });
+
+    sections.forEach((section) => observer.observe(section));
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown" || event.key === "PageDown") {
+        event.preventDefault();
+        scrollToSection(activeSection + 1);
+      }
+      if (event.key === "ArrowUp" || event.key === "PageUp") {
+        event.preventDefault();
+        scrollToSection(activeSection - 1);
+      }
+      if (event.key === "Home") {
+        event.preventDefault();
+        scrollToSection(0);
+      }
+      if (event.key === "End") {
+        event.preventDefault();
+        scrollToSection(sections.length - 1);
+      }
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) window.clearInterval(heroTimer);
+      else resetHeroTimer();
+    });
+
+    setActiveSection(0);
+    setHeroSlide(0);
+  </script>
+</body>
+</html>

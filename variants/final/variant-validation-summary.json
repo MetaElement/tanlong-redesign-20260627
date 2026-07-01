@@ -1,0 +1,38 @@
+[
+  {
+    "id": "aqua-clear",
+    "consoleErrors": [],
+    "badImages": [],
+    "overlapHeader": false,
+    "mainElementsInViewport": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "morning-green",
+    "consoleErrors": [],
+    "badImages": [],
+    "overlapHeader": false,
+    "mainElementsInViewport": [
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  {
+    "id": "silver-air",
+    "consoleErrors": [],
+    "badImages": [],
+    "overlapHeader": false,
+    "mainElementsInViewport": [
+      true,
+      true,
+      true,
+      true
+    ]
+  }
+]

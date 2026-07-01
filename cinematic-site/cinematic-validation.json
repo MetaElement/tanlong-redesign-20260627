@@ -1,0 +1,76 @@
+{
+  "html": "index.html",
+  "screenshots": [
+    "screenshots/cinematic-hero-01.png",
+    "screenshots/cinematic-hero-02.png",
+    "screenshots/cinematic-hero-03.png",
+    "screenshots/cinematic-hero-04.png",
+    "screenshots/cinematic-hero-05.png",
+    "screenshots/cinematic-section-01.png",
+    "screenshots/cinematic-section-02.png",
+    "screenshots/cinematic-section-03.png",
+    "screenshots/cinematic-section-04.png",
+    "screenshots/cinematic-section-05.png",
+    "screenshots/cinematic-section-06.png"
+  ],
+  "pauseControl": {
+    "isPaused": true,
+    "activeHeroControls": 1,
+    "visibleProgressRings": 1,
+    "inactiveLines": 4
+  },
+  "consoleMessages": [],
+  "pageErrors": [],
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "documentHeight": 6480,
+  "sectionCount": 6,
+  "heroSlideCount": 5,
+  "heroControlCount": 5,
+  "railCount": 6,
+  "navCount": 6,
+  "activeSections": 6,
+  "badImages": [],
+  "overflow": [],
+  "sections": [
+    {
+      "id": "home",
+      "index": 0,
+      "height": 1080,
+      "snapAlign": "start"
+    },
+    {
+      "id": "about",
+      "index": 1,
+      "height": 1080,
+      "snapAlign": "start"
+    },
+    {
+      "id": "solutions",
+      "index": 2,
+      "height": 1080,
+      "snapAlign": "start"
+    },
+    {
+      "id": "technology",
+      "index": 3,
+      "height": 1080,
+      "snapAlign": "start"
+    },
+    {
+      "id": "cases",
+      "index": 4,
+      "height": 1080,
+      "snapAlign": "start"
+    },
+    {
+      "id": "contact",
+      "index": 5,
+      "height": 1080,
+      "snapAlign": "start"
+    }
+  ],
+  "scrollSnapType": "y mandatory"
+}

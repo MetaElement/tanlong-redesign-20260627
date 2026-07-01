@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "title": "Creative Production Review",
+    "summary": "Review, select, and hand off generated Creative Production images.",
+    "source": "review_renderer",
+    "itemCount": 1
+  },
+  "items": [
+    {
+      "id": "tanlong-redesign-final",
+      "title": "Tanlong Environment homepage hero redesign",
+      "caption": "1920x1080 desktop hero composite. Tanlong industrial background plus deterministic brand lockup, navigation, headline, metrics, CTA, and business entries.",
+      "tone": "",
+      "prompt": "Adapt the premium full-screen industrial hero layout to Tanlong Environment / \u5766\u9686\u73af\u5883, replacing all brand, proof, technology, and navigation text deterministically.",
+      "imageUrl": "/generated/mcp-thumbs/tanlong-redesign-final.jpg",
+      "previewImageUrl": "/generated/mcp-thumbs/tanlong-redesign-final.jpg",
+      "sourceImageUrl": "/generated/tanlong-redesign-final.png"
+    }
+  ]
+}

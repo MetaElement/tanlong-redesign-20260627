@@ -1,0 +1,99 @@
+{
+  "id": "morning-green",
+  "consoleErrors": [],
+  "diagnostics": {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "right": 1920,
+      "bottom": 1080
+    },
+    "header": {
+      "x": 104,
+      "y": 38,
+      "width": 1712,
+      "height": 76,
+      "right": 1816,
+      "bottom": 114
+    },
+    "logo": {
+      "x": 104,
+      "y": 47.5,
+      "width": 330,
+      "height": 56,
+      "right": 434,
+      "bottom": 103.5
+    },
+    "slogan": {
+      "x": 458,
+      "y": 58.5,
+      "width": 243.875,
+      "height": 34,
+      "right": 701.875,
+      "bottom": 92.5
+    },
+    "nav": {
+      "x": 820,
+      "y": 64.5,
+      "width": 760,
+      "height": 22,
+      "right": 1580,
+      "bottom": 86.5
+    },
+    "stock": {
+      "x": 1624,
+      "y": 50,
+      "width": 118,
+      "height": 51,
+      "right": 1742,
+      "bottom": 101
+    },
+    "h1": {
+      "x": 104,
+      "y": 268.5,
+      "width": 780,
+      "height": 168.46875,
+      "right": 884,
+      "bottom": 436.96875
+    },
+    "lede": {
+      "x": 104,
+      "y": 468.96875,
+      "width": 710,
+      "height": 75.59375,
+      "right": 814,
+      "bottom": 544.5625
+    },
+    "metrics": {
+      "x": 104,
+      "y": 856,
+      "width": 870,
+      "height": 128,
+      "right": 974,
+      "bottom": 984
+    },
+    "capability": {
+      "x": 1136,
+      "y": 678,
+      "width": 680,
+      "height": 308,
+      "right": 1816,
+      "bottom": 986
+    },
+    "badImages": [],
+    "overlapHeader": false,
+    "mainElementsInViewport": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "bodyText": "工业绿色低碳的数智赋能者 LOW-CARBON INDUSTRIAL SYSTEMS 网站首页 产品方案 核心技术 案例中心 关于我们 资源中心 联系我们 信用资质 AAA TANLONG LOW-CARBON INDUSTRIAL SYSTEMS 工业绿色低碳的 数智赋能者 专注钢渣处理与余热回收，以全球首创的钢渣全流程干法余热回收利用技术，推动钢铁工业废渣与废热转化为绿色循环资源。 预约技术交流 查看核心工艺 18 大型钢厂落地 33 生产线应用 近40 核心专利 8亿 累计签约 核心业务与技术 SLAG / HEAT / DATA / PROOF 01 SLAG 钢渣全流程干法处理 02 HEAT 余热回收与膜式换热 03 DIGITAL 低碳运行数据看板 04 PROOF 专利与案例证据链 首 技 案 询 II"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "consoleErrors": [],
+  "diagnostics": {
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "stage": {
+      "x": 0,
+      "y": 0,
+      "width": 1920,
+      "height": 1080,
+      "right": 1920,
+      "bottom": 1080
+    },
+    "header": {
+      "x": 104,
+      "y": 38,
+      "width": 1712,
+      "height": 76,
+      "right": 1816,
+      "bottom": 114
+    },
+    "logo": {
+      "x": 104,
+      "y": 47.5,
+      "width": 330,
+      "height": 56,
+      "right": 434,
+      "bottom": 103.5
+    },
+    "slogan": {
+      "x": 458,
+      "y": 58.5,
+      "width": 243.875,
+      "height": 34,
+      "right": 701.875,
+      "bottom": 92.5
+    },
+    "nav": {
+      "x": 820,
+      "y": 64.5,
+      "width": 760,
+      "height": 22,
+      "right": 1580,
+      "bottom": 86.5
+    },
+    "stock": {
+      "x": 1624,
+      "y": 50,
+      "width": 118,
+      "height": 51,
+      "right": 1742,
+      "bottom": 101
+    },
+    "badImages": [],
+    "overlapHeader": false
+  }
+}

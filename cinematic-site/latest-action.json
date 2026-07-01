@@ -1,0 +1,14 @@
+{
+  "id": "review-renderer-materialized",
+  "action": "write_moodboard_widget_payload",
+  "label": "Materialized Creative Production image review",
+  "createdAt": "2026-06-27T16:04:16.014981Z",
+  "timestamp": "2026-06-27T16:04:16.014981Z",
+  "title": "Creative Production Review",
+  "summary": "Review, select, and hand off generated Creative Production images.",
+  "itemCount": 11,
+  "runDirectory": "/Users/RenChengyuan/Desktop/Ebooks/outputs/imagegen/generative-polish/tanlong-redesign-20260627/cinematic-site",
+  "streamPath": "/Users/RenChengyuan/Desktop/Ebooks/outputs/imagegen/generative-polish/tanlong-redesign-20260627/cinematic-site/data/stream.json",
+  "runStatePath": "/Users/RenChengyuan/Desktop/Ebooks/outputs/imagegen/generative-polish/tanlong-redesign-20260627/cinematic-site/run-state.json",
+  "latestActionPath": "/Users/RenChengyuan/Desktop/Ebooks/outputs/imagegen/generative-polish/tanlong-redesign-20260627/cinematic-site/latest-action.json"
+}

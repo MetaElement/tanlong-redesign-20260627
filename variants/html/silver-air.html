@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tanlong Environment Silver Air hero variant</title>
+  <style>
+    :root {
+      --white: #ffffff;
+      --ink: #061923;
+      --blue: #078fd4;
+      --cyan: #39d8ff;
+      --green: #45d38c;
+      --gold: #ff9f3d;
+      --line: rgba(255, 255, 255, 0.32);
+      --muted: rgba(255, 255, 255, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      background: #061923;
+      font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Source Han Sans SC", sans-serif;
+    }
+
+    .stage {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      color: var(--white);
+      isolation: isolate;
+    }
+
+    .background {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -4;
+    }
+
+    .shade {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 52% 28%, rgba(255, 159, 61, 0.24), transparent 21%),
+        radial-gradient(circle at 78% 24%, rgba(69, 211, 140, 0.2), transparent 24%),
+        linear-gradient(90deg, rgba(3, 20, 27, 0.96) 0%, rgba(3, 33, 43, 0.86) 35%, rgba(9, 48, 52, 0.44) 64%, rgba(8, 28, 34, 0.22) 100%),
+        linear-gradient(180deg, rgba(3, 20, 26, 0.26), rgba(1, 15, 21, 0.76));
+    }
+
+    .grid {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      opacity: 0.42;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 96px 96px;
+      mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 73%);
+    }
+
+    .beam {
+      position: absolute;
+      left: 120px;
+      bottom: 170px;
+      width: 720px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      box-shadow: 0 0 34px rgba(67, 215, 255, 0.72);
+      opacity: 0.72;
+    }
+
+    header {
+      position: absolute;
+      left: 104px;
+      right: 104px;
+      top: 38px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+    }
+
+    .brand-lockup {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 0 0 auto;
+      color: #fff;
+    }
+
+    .brand-logo {
+      display: block;
+      width: 330px;
+      height: 56px;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.22));
+    }
+
+    .brand-slogan {
+      min-width: 218px;
+      padding-left: 24px;
+      border-left: 1px solid rgba(255, 255, 255, 0.48);
+    }
+
+    .brand-slogan strong,
+    .brand-slogan span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .brand-slogan strong {
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 560;
+    }
+
+    .brand-slogan span {
+      margin-top: 9px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: 1.25px;
+    }
+
+    nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 52px;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.84);
+      white-space: nowrap;
+    }
+
+    nav span:first-child {
+      color: #fff;
+      position: relative;
+    }
+
+    nav span:first-child::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -30px;
+      height: 3px;
+      background: #fff;
+    }
+
+    .stock {
+      margin-left: 44px;
+      padding-left: 34px;
+      min-width: 118px;
+      border-left: 1px solid rgba(255, 255, 255, 0.56);
+      font-size: 14px;
+      line-height: 1.25;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .stock strong {
+      display: block;
+      margin-top: 6px;
+      color: #fff;
+      font-size: 22px;
+      letter-spacing: 1px;
+    }
+
+    .search {
+      margin-left: 28px;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .search::before {
+      content: "";
+      position: absolute;
+      left: 15px;
+      top: 13px;
+      width: 12px;
+      height: 12px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+
+    .search::after {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 27px;
+      width: 10px;
+      height: 2px;
+      background: #fff;
+      transform: rotate(45deg);
+      transform-origin: left center;
+    }
+
+    main {
+      position: absolute;
+      left: 104px;
+      top: 214px;
+      width: 820px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 54px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: 78px;
+      line-height: 1.08;
+      font-weight: 650;
+      letter-spacing: 0;
+      text-shadow: 0 20px 70px rgba(0, 0, 0, 0.34);
+    }
+
+    .lede {
+      margin: 32px 0 0;
+      width: 710px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 21px;
+      line-height: 1.8;
+      font-weight: 350;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .primary,
+    .secondary {
+      height: 54px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 28px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .primary {
+      border-color: transparent;
+      background: linear-gradient(110deg, #00a8e8, #31cf92);
+      box-shadow: 0 18px 46px rgba(0, 168, 232, 0.24);
+    }
+
+    .secondary {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(18px);
+    }
+
+    .metrics {
+      position: absolute;
+      left: 104px;
+      bottom: 96px;
+      width: 870px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.015));
+      backdrop-filter: blur(18px);
+    }
+
+    .metric {
+      min-height: 126px;
+      padding: 22px 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .metric:last-child {
+      border-right: 0;
+    }
+
+    .metric strong {
+      display: block;
+      color: #fff;
+      font-size: 44px;
+      line-height: 1;
+      font-weight: 650;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 15px;
+    }
+
+    .capability {
+      position: absolute;
+      right: 104px;
+      bottom: 94px;
+      width: 680px;
+      padding: 30px;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.055));
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 34px 80px rgba(0, 24, 36, 0.28);
+    }
+
+    .capability-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 14px;
+    }
+
+    .capability-head strong {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .service {
+      min-height: 92px;
+      padding: 18px 18px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(1, 22, 32, 0.26);
+    }
+
+    .service small {
+      display: block;
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .service strong {
+      display: block;
+      margin-top: 11px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 520;
+    }
+
+    .side-rail {
+      position: absolute;
+      left: 34px;
+      top: 435px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .rail-dot {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 13px;
+      border: 1px solid rgba(255, 255, 255, 0.54);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .rail-dot.active {
+      border-color: transparent;
+      background: linear-gradient(135deg, #00a8e8, #35d18d);
+    }
+
+    .controls {
+      position: absolute;
+      left: 50%;
+      bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .pause {
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+    }
+
+    .dot.active {
+      width: 44px;
+      border-radius: 999px;
+      background: #fff;
+    }
+  
+    :root {
+      --blue: #4aa7d8;
+      --cyan: #80dcff;
+      --green: #76e3be;
+      --gold: #e7fbff;
+      --line: rgba(226, 247, 255, 0.44);
+      --muted: rgba(235, 248, 255, 0.76);
+    }
+    body { background: #082432; }
+    .background { filter: saturate(0.96) contrast(0.98) brightness(0.98); }
+    .shade {
+      background:
+        radial-gradient(circle at 73% 20%, rgba(166, 230, 255, 0.2), transparent 29%),
+        radial-gradient(circle at 45% 55%, rgba(122, 226, 190, 0.12), transparent 26%),
+        linear-gradient(90deg, rgba(5, 28, 41, 0.91) 0%, rgba(8, 48, 64, 0.72) 34%, rgba(44, 122, 148, 0.2) 59%, rgba(245, 252, 255, 0.04) 100%),
+        linear-gradient(180deg, rgba(77, 174, 217, 0.1), rgba(5, 25, 36, 0.42));
+    }
+    .grid { opacity: 0.22; background-size: 88px 88px; }
+    .beam { background: linear-gradient(90deg, #80dcff, rgba(118, 227, 190, 0)); box-shadow: 0 0 34px rgba(128, 220, 255, 0.44); }
+    header { border-bottom-color: rgba(235, 248, 255, 0.31); }
+    .primary { background: linear-gradient(110deg, #3ab5e4, #76e3be); box-shadow: 0 18px 44px rgba(58, 181, 228, 0.22); }
+    .secondary { background: rgba(238, 248, 255, 0.08); border-color: rgba(238, 248, 255, 0.44); }
+    .metrics { background: linear-gradient(90deg, rgba(12, 70, 91, 0.54), rgba(255, 255, 255, 0.045)); border-top-color: rgba(225, 246, 255, 0.38); }
+    .capability { background: linear-gradient(145deg, rgba(18, 76, 98, 0.43), rgba(243, 250, 255, 0.1)); border-color: rgba(226, 247, 255, 0.38); }
+    .service { background: rgba(7, 38, 52, 0.24); }
+    .rail-dot.active { background: linear-gradient(135deg, #3ab5e4, #76e3be); }
+    
+  </style>
+</head>
+<body>
+  <section class="stage" aria-label="Tanlong Environment Silver Air homepage hero variant">
+    <img class="background" src="../backgrounds/silver-air-bg.png" alt="" />
+    <div class="shade" aria-hidden="true"></div>
+    <div class="grid" aria-hidden="true"></div>
+    <div class="beam" aria-hidden="true"></div>
+
+    <header>
+      <div class="brand-lockup" aria-label="坦隆环境 Tanlong Environment">
+        <img class="brand-logo" src="../../assets/tanlong-logo-full.svg" alt="坦隆环境 Tanlong Environment" />
+        <div class="brand-slogan">
+          <strong>工业绿色低碳的数智赋能者</strong>
+          <span>LOW-CARBON INDUSTRIAL SYSTEMS</span>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <span>网站首页</span>
+        <span>产品方案</span>
+        <span>核心技术</span>
+        <span>案例中心</span>
+        <span>关于我们</span>
+        <span>资源中心</span>
+        <span>联系我们</span>
+      </nav>
+      <div class="stock">信用资质<strong>AAA</strong></div>
+      <div class="search" aria-hidden="true"></div>
+    </header>
+
+    <main>
+      <div class="eyebrow">TANLONG LOW-CARBON INDUSTRIAL SYSTEMS</div>
+      <h1>工业绿色低碳的<br />数智赋能者</h1>
+      <p class="lede">专注钢渣处理与余热回收，以全球首创的钢渣全流程干法余热回收利用技术，推动钢铁工业废渣与废热转化为绿色循环资源。</p>
+      <div class="actions">
+        <a class="primary" href="#">预约技术交流</a>
+        <a class="secondary" href="#">查看核心工艺</a>
+      </div>
+    </main>
+
+    <aside class="metrics" aria-label="Core proof points">
+      <div class="metric"><strong>18</strong><span>大型钢厂落地</span></div>
+      <div class="metric"><strong>33</strong><span>生产线应用</span></div>
+      <div class="metric"><strong>近40</strong><span>核心专利</span></div>
+      <div class="metric"><strong>8亿</strong><span>累计签约</span></div>
+    </aside>
+
+    <aside class="capability" aria-label="Business capability entries">
+      <div class="capability-head"><strong>核心业务与技术</strong><span>SLAG / HEAT / DATA / PROOF</span></div>
+      <div class="services">
+        <div class="service"><small>01 SLAG</small><strong>钢渣全流程干法处理</strong></div>
+        <div class="service"><small>02 HEAT</small><strong>余热回收与膜式换热</strong></div>
+        <div class="service"><small>03 DIGITAL</small><strong>低碳运行数据看板</strong></div>
+        <div class="service"><small>04 PROOF</small><strong>专利与案例证据链</strong></div>
+      </div>
+    </aside>
+
+    <div class="side-rail" aria-hidden="true">
+      <span class="rail-dot active">首</span>
+      <span class="rail-dot">技</span>
+      <span class="rail-dot">案</span>
+      <span class="rail-dot">询</span>
+    </div>
+
+    <div class="controls" aria-hidden="true">
+      <span class="pause">II</span>
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+</body>
+</html>

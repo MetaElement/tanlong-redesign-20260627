@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="56" viewBox="0 0 330 56" role="img" aria-labelledby="title desc">
+  <title id="title">坦隆环境 Tanlong Environment logo</title>
+  <desc id="desc">A restrained industrial low-carbon technology mark with Chinese and English Tanlong Environment wordmark.</desc>
+  <defs>
+    <linearGradient id="markFill" x1="6" y1="6" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11B8E8"/>
+      <stop offset="0.56" stop-color="#0796C8"/>
+      <stop offset="1" stop-color="#29C884"/>
+    </linearGradient>
+    <linearGradient id="arcStroke" x1="8" y1="42" x2="46" y2="14" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7EF4C4"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+    <filter id="markShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#001925" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <g fill="none">
+    <g transform="translate(1 2)" filter="url(#markShadow)">
+      <circle cx="26" cy="26" r="25" fill="url(#markFill)" stroke="#FFFFFF" stroke-width="2"/>
+      <circle cx="26" cy="26" r="20.5" stroke="rgba(255,255,255,0.24)" stroke-width="1"/>
+      <path d="M14.5 17.5H38.5" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="square"/>
+      <path d="M26.3 17.5V40.5H40.8" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="square" stroke-linejoin="miter"/>
+      <path d="M41.2 17.8A19.2 19.2 0 0 1 42.2 34.6" stroke="url(#arcStroke)" stroke-width="3.1" stroke-linecap="round" opacity="0.9"/>
+      <path d="M13.5 34.2A19.1 19.1 0 0 1 16.6 16.1" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.34"/>
+    </g>
+    <g fill="#FFFFFF" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Source Han Sans SC, Arial, sans-serif">
+      <text x="66" y="25" font-size="27" font-weight="760" letter-spacing="0">坦隆环境</text>
+      <text x="68" y="44" font-size="12" font-weight="560" letter-spacing="1.65" opacity="0.82">TANLONG ENVIRONMENT</text>
+    </g>
+  </g>
+</svg>

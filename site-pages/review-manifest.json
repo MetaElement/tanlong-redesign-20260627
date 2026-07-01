@@ -1,0 +1,122 @@
+[
+  {
+    "id": "00-home",
+    "title": "首页 / Home",
+    "label": "首页 / Home",
+    "src": "final/tanlong-00-home-1920x1080.png",
+    "href": "final/tanlong-00-home-1920x1080.png",
+    "caption": "首屏承接 Poten 式沉浸感，但信息改为坦隆的钢渣处理、余热回收、专利与项目证明。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "01-about",
+    "title": "关于我们 / About",
+    "label": "关于我们 / About",
+    "src": "final/tanlong-01-about-1920x1080.png",
+    "href": "final/tanlong-01-about-1920x1080.png",
+    "caption": "把品牌理念、技术领军、信用资质和落地规模前置，建立 B2B 官网的第一层可信度。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "02-solutions",
+    "title": "产品方案 / Solutions",
+    "label": "产品方案 / Solutions",
+    "src": "final/tanlong-02-solutions-1920x1080.png",
+    "href": "final/tanlong-02-solutions-1920x1080.png",
+    "caption": "用三张核心业务图形成方案入口：钢渣处理、余热回收、低碳数据看板，并补足工程服务流程。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "03-technology",
+    "title": "核心技术 / Technology",
+    "label": "核心技术 / Technology",
+    "src": "final/tanlong-03-technology-1920x1080.png",
+    "href": "final/tanlong-03-technology-1920x1080.png",
+    "caption": "技术页用流程图和专利数据表达硬核能力，避免只放抽象口号。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "04-cases",
+    "title": "案例中心 / Cases",
+    "label": "案例中心 / Cases",
+    "src": "final/tanlong-04-cases-1920x1080.png",
+    "href": "final/tanlong-04-cases-1920x1080.png",
+    "caption": "案例页不伪造客户 Logo，用应用场景、工况和落地数量建立可信但可发布的证明层。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "05-resources-contact",
+    "title": "资源与联系 / Resources & Contact",
+    "label": "资源与联系 / Resources & Contact",
+    "src": "final/tanlong-05-resources-contact-1920x1080.png",
+    "href": "final/tanlong-05-resources-contact-1920x1080.png",
+    "caption": "把资料下载、专家咨询、项目周期和线索表单整合成转化页，服务官网商业目标。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "06-slag-detail",
+    "title": "钢渣方案详情 / Slag Treatment",
+    "label": "钢渣方案详情 / Slag Treatment",
+    "src": "final/tanlong-06-slag-detail-1920x1080.png",
+    "href": "final/tanlong-06-slag-detail-1920x1080.png",
+    "caption": "方案详情页把客户痛点、工艺亮点、适用场景和可量化证明集中到一屏。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "07-heat-detail",
+    "title": "余热回收详情 / Heat Recovery",
+    "label": "余热回收详情 / Heat Recovery",
+    "src": "final/tanlong-07-heat-detail-1920x1080.png",
+    "href": "final/tanlong-07-heat-detail-1920x1080.png",
+    "caption": "余热详情页突出换热系统、能源回收、运行监控和产线安全边界。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "08-digital-detail",
+    "title": "数字化看板详情 / Digital Dashboard",
+    "label": "数字化看板详情 / Digital Dashboard",
+    "src": "final/tanlong-08-digital-detail-1920x1080.png",
+    "href": "final/tanlong-08-digital-detail-1920x1080.png",
+    "caption": "数字化详情页用仪表盘化表达能效、产线状态、运维和低碳指标，不伪造真实数据。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "09-case-detail",
+    "title": "案例详情 / Case Detail",
+    "label": "案例详情 / Case Detail",
+    "src": "final/tanlong-09-case-detail-1920x1080.png",
+    "href": "final/tanlong-09-case-detail-1920x1080.png",
+    "caption": "案例详情页用“背景、方案、结果、可复用经验”组织内容，不写未授权客户名。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "10-resource-article",
+    "title": "资源文章 / Resource Article",
+    "label": "资源文章 / Resource Article",
+    "src": "final/tanlong-10-resource-article-1920x1080.png",
+    "href": "final/tanlong-10-resource-article-1920x1080.png",
+    "caption": "资源文章页服务 SEO、销售赋能和技术决策，不只是新闻列表。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  },
+  {
+    "id": "11-service-process",
+    "title": "服务流程 / Service Process",
+    "label": "服务流程 / Service Process",
+    "src": "final/tanlong-11-service-process-1920x1080.png",
+    "href": "final/tanlong-11-service-process-1920x1080.png",
+    "caption": "服务流程页把咨询、调研、方案、商务、交付、运维复盘形成官网转化闭环。",
+    "prompt": "Desktop 1920x1080 Tanlong Environment website page effect. Deterministic Chinese copy and brand layers; visual style: fresh environmental technology, industrial low-carbon credibility, transparent glass overlays.",
+    "route": "Tanlong full website effect"
+  }
+]

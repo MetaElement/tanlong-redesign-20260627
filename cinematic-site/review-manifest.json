@@ -1,0 +1,90 @@
+[
+  {
+    "id": "cinematic-hero-01",
+    "title": "Hero 轮播 01",
+    "label": "首页 Hero / 主张",
+    "src": "screenshots/cinematic-hero-01.png",
+    "href": "screenshots/cinematic-hero-01.png",
+    "caption": "5 张 Hero 的第一张：保留大背景逐渐拉近，只在左下放核心主张、CTA 和证明点。"
+  },
+  {
+    "id": "cinematic-hero-02",
+    "title": "Hero 轮播 02",
+    "label": "首页 Hero / 钢渣",
+    "src": "screenshots/cinematic-hero-02.png",
+    "href": "screenshots/cinematic-hero-02.png",
+    "caption": "钢渣干法处理方向，底部控件为当前圆形进度，其余横线。"
+  },
+  {
+    "id": "cinematic-hero-03",
+    "title": "Hero 轮播 03",
+    "label": "首页 Hero / 余热",
+    "src": "screenshots/cinematic-hero-03.png",
+    "href": "screenshots/cinematic-hero-03.png",
+    "caption": "余热回收方向，背景持续缓慢拉近，当前圆圈中央可暂停。"
+  },
+  {
+    "id": "cinematic-hero-04",
+    "title": "Hero 轮播 04",
+    "label": "首页 Hero / 数据",
+    "src": "screenshots/cinematic-hero-04.png",
+    "href": "screenshots/cinematic-hero-04.png",
+    "caption": "数字化运行方向，把工况、能效和运维复盘作为低碳资产表达。"
+  },
+  {
+    "id": "cinematic-hero-05",
+    "title": "Hero 轮播 05",
+    "label": "首页 Hero / 工程闭环",
+    "src": "screenshots/cinematic-hero-05.png",
+    "href": "screenshots/cinematic-hero-05.png",
+    "caption": "工程闭环方向，用清透低碳园区收束首页轮播。"
+  },
+  {
+    "id": "cinematic-section-01",
+    "title": "吸屏章节 01",
+    "label": "页面滚屏 / 网站首页",
+    "src": "screenshots/cinematic-section-01.png",
+    "href": "screenshots/cinematic-section-01.png",
+    "caption": "纵向 scroll-snap 第一屏，对应左侧首页 icon；它是页面级章节，不是 Hero 轮播控制。"
+  },
+  {
+    "id": "cinematic-section-02",
+    "title": "吸屏章节 02",
+    "label": "页面滚屏 / 关于坦隆",
+    "src": "screenshots/cinematic-section-02.png",
+    "href": "screenshots/cinematic-section-02.png",
+    "caption": "关于坦隆一整屏品牌叙事，用清新园区背景、少量证明条和大面积留白表达可信度。"
+  },
+  {
+    "id": "cinematic-section-03",
+    "title": "吸屏章节 03",
+    "label": "页面滚屏 / 产品方案",
+    "src": "screenshots/cinematic-section-03.png",
+    "href": "screenshots/cinematic-section-03.png",
+    "caption": "产品方案保留三张悬浮卡片，但控制在画面一侧，让工业现场背景保持主导。"
+  },
+  {
+    "id": "cinematic-section-04",
+    "title": "吸屏章节 04",
+    "label": "页面滚屏 / 核心技术",
+    "src": "screenshots/cinematic-section-04.png",
+    "href": "screenshots/cinematic-section-04.png",
+    "caption": "核心技术用一个轻量动态闭环图形表达热态采集、换热回收、连续控制和运行复盘。"
+  },
+  {
+    "id": "cinematic-section-05",
+    "title": "吸屏章节 05",
+    "label": "页面滚屏 / 案例中心",
+    "src": "screenshots/cinematic-section-05.png",
+    "href": "screenshots/cinematic-section-05.png",
+    "caption": "案例页沿用震撼绿色工业基地背景，把 18 家钢厂、33 条生产线等证明点前置。"
+  },
+  {
+    "id": "cinematic-section-06",
+    "title": "吸屏章节 06",
+    "label": "页面滚屏 / 联系我们",
+    "src": "screenshots/cinematic-section-06.png",
+    "href": "screenshots/cinematic-section-06.png",
+    "caption": "联系页用清透水环境收束，只放项目沟通路径和轻量行动入口。"
+  }
+]

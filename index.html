@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>坦隆环境官网动态原型发布页</title>
+  <meta name="description" content="坦隆环境官网重设计动态原型、页面效果图和配色版本的 GitHub Pages 发布入口。" />
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #071d22;
+      --panel: rgba(255, 255, 255, 0.08);
+      --line: rgba(255, 255, 255, 0.16);
+      --text: #f4fbfb;
+      --muted: rgba(244, 251, 251, 0.68);
+      --cyan: #44d7e5;
+      --green: #63cb86;
+      --serif: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      --sans: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100svh;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        linear-gradient(90deg, rgba(7, 29, 34, 0.9), rgba(7, 29, 34, 0.42)),
+        url("site-pages/assets/case-hero.png") center / cover fixed,
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 54px 54px;
+      opacity: 0.25;
+      mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+    }
+
+    main {
+      width: min(1180px, calc(100% - 56px));
+      margin: 0 auto;
+      padding: 84px 0 76px;
+    }
+
+    header {
+      display: grid;
+      gap: 24px;
+      max-width: 860px;
+      margin-bottom: 52px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand img {
+      width: 210px;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 18px 38px rgba(0,0,0,0.28));
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(54px, 7vw, 108px);
+      line-height: 1.02;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .section-title {
+      grid-column: 1 / -1;
+      margin: 34px 0 2px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .card {
+      min-height: 168px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      color: var(--text);
+      text-decoration: none;
+      background: var(--panel);
+      backdrop-filter: blur(16px);
+      transition: transform 360ms cubic-bezier(0.32, 0.72, 0, 1), border-color 360ms cubic-bezier(0.32, 0.72, 0, 1), background 360ms cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    .card:hover {
+      transform: translate3d(0, -4px, 0);
+      border-color: rgba(68, 215, 229, 0.68);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .card.primary {
+      min-height: 218px;
+      grid-column: span 2;
+      background: linear-gradient(135deg, rgba(68, 215, 229, 0.2), rgba(99, 203, 134, 0.13));
+    }
+
+    .card small {
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 12px;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .card strong {
+      display: block;
+      margin-top: 12px;
+      font-size: 27px;
+      line-height: 1.22;
+      font-weight: 620;
+      letter-spacing: 0;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .arrow {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    .arrow::after {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+      transition: width 360ms cubic-bezier(0.32, 0.72, 0, 1);
+    }
+
+    .card:hover .arrow::after {
+      width: 62px;
+      background: var(--cyan);
+    }
+
+    footer {
+      margin-top: 40px;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      main {
+        width: min(100% - 32px, 720px);
+        padding-top: 44px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card.primary {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="brand">
+        <img src="site-pages/assets/tanlong-logo-full.svg" alt="坦隆环境 Tanlong Environment" />
+        <span>Website redesign prototype</span>
+      </div>
+      <h1>坦隆环境官网<br />动态原型发布页</h1>
+      <p class="lead">这里汇总当前重设计工作的可交互动态原型、页面效果稿、配色版本和评审板。主原型采用首页 Hero 五图轮播 + 纵向吸屏章节结构。</p>
+    </header>
+
+    <section class="grid" aria-label="动态原型">
+      <div class="section-title">Primary dynamic prototype</div>
+      <a class="card primary" href="cinematic-site/index.html">
+        <span>
+          <small>Live prototype</small>
+          <strong>坦隆环境动态官网</strong>
+        </span>
+        <p>首页 Hero 五张轮播，当前圆形进度可暂停；向下滚动进入左侧 icon 对应的一屏一屏内容。</p>
+        <span class="arrow">打开原型</span>
+      </a>
+      <a class="card" href="cinematic-site/review-board.html">
+        <span>
+          <small>Review board</small>
+          <strong>动态原型截图评审</strong>
+        </span>
+        <p>包含 5 个 Hero 状态与 6 个纵向吸屏章节截图。</p>
+        <span class="arrow">查看评审</span>
+      </a>
+
+      <div class="section-title">Full page effect set</div>
+      <a class="card" href="site-pages/review-board.html"><span><small>Pages board</small><strong>整套页面效果评审</strong></span><p>12 张官网页面效果图总览。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/00-home.html"><span><small>Page 00</small><strong>首页首屏</strong></span><p>静态首屏效果稿。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/01-about.html"><span><small>Page 01</small><strong>关于坦隆</strong></span><p>品牌与证明点页面。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/02-solutions.html"><span><small>Page 02</small><strong>产品方案</strong></span><p>钢渣、余热、数据闭环入口。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/03-technology.html"><span><small>Page 03</small><strong>核心技术</strong></span><p>低碳运行与技术闭环。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/04-cases.html"><span><small>Page 04</small><strong>案例中心</strong></span><p>工程验证与案例表达。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/05-resources-contact.html"><span><small>Page 05</small><strong>资源与联系</strong></span><p>沟通路径与资源入口。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/06-slag-detail.html"><span><small>Detail</small><strong>钢渣处理详情</strong></span><p>方案详情页效果。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/07-heat-detail.html"><span><small>Detail</small><strong>余热回收详情</strong></span><p>方案详情页效果。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/08-digital-detail.html"><span><small>Detail</small><strong>数字化运行详情</strong></span><p>方案详情页效果。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/09-case-detail.html"><span><small>Detail</small><strong>案例详情</strong></span><p>项目详情页效果。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/10-resource-article.html"><span><small>Article</small><strong>资源文章</strong></span><p>内容型页面效果。</p><span class="arrow">查看</span></a>
+      <a class="card" href="site-pages/html/11-service-process.html"><span><small>Process</small><strong>服务流程</strong></span><p>项目服务路径页面。</p><span class="arrow">查看</span></a>
+
+      <div class="section-title">Palette variations</div>
+      <a class="card" href="variants/html/aqua-clear.html"><span><small>Palette</small><strong>清透水绿</strong></span><p>环境友好、清新通透方向。</p><span class="arrow">查看</span></a>
+      <a class="card" href="variants/html/morning-green.html"><span><small>Palette</small><strong>晨光绿境</strong></span><p>自然、开放、轻盈方向。</p><span class="arrow">查看</span></a>
+      <a class="card" href="variants/html/silver-air.html"><span><small>Palette</small><strong>银白空气感</strong></span><p>科技、洁净、未来方向。</p><span class="arrow">查看</span></a>
+
+      <div class="section-title">Earlier boards</div>
+      <a class="card" href="review-board.html"><span><small>Root review</small><strong>首屏效果评审</strong></span><p>早期单图重设计评审板。</p><span class="arrow">查看</span></a>
+      <a class="card" href="composite.html"><span><small>Composite</small><strong>首屏合成稿</strong></span><p>首版确定性合成页面。</p><span class="arrow">查看</span></a>
+    </section>
+
+    <footer>
+      Published as a static GitHub Pages package. 所有文字、logo、页面链接和关键导航均由确定性 HTML/CSS 输出。
+    </footer>
+  </main>
+</body>
+</html>
