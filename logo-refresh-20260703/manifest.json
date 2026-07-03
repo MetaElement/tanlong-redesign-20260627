@@ -1,0 +1,36 @@
+{
+  "brand": "坦隆环境 / Tanlong Environment",
+  "date": "2026-07-03",
+  "installedSkill": {
+    "name": "logo-designer",
+    "source": "https://github.com/neonwatty/logo-designer-skill",
+    "installedPath": "/Users/RenChengyuan/.codex/skills/logo-designer"
+  },
+  "selectedDirection": "concept-1-water-gate",
+  "palette": {
+    "deep": "#0B2F38",
+    "ink": "#102E35",
+    "teal": "#0FA7A1",
+    "cyan": "#23C4D8",
+    "mint": "#8BE7C2",
+    "white": "#FFFFFF",
+    "fog": "#EAF7F5",
+    "steel": "#6A8187"
+  },
+  "files": {
+    "preview": "logos/preview.html",
+    "reviewBoard": "review-board.html",
+    "concepts": [
+      "logos/concepts/concept-1-water-gate.svg",
+      "logos/concepts/concept-2-contour-rise.svg",
+      "logos/concepts/concept-3-engineering-axis.svg",
+      "logos/concepts/concept-4-institutional-seal.svg"
+    ],
+    "final": [
+      "final/tanlong-logo-full.svg",
+      "final/tanlong-logo-full-dark.svg",
+      "final/tanlong-logo-mark.svg",
+      "final/tanlong-logo-mark-on-dark.svg"
+    ]
+  }
+}

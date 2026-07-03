@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="tanlong-mark-title tanlong-mark-desc">
+  <title id="tanlong-mark-title">坦隆环境图形标识</title>
+  <desc id="tanlong-mark-desc">Water loop and TL engineering monogram for Tanlong Environment.</desc>
+  
+  <defs>
+    <linearGradient id="tanlong-mark-edge" x1="78" y1="96" x2="424" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8BE7C2"/>
+      <stop offset="0.42" stop-color="#23C4D8"/>
+      <stop offset="1" stop-color="#0FA7A1"/>
+    </linearGradient>
+    <linearGradient id="tanlong-mark-flow" x1="104" y1="338" x2="420" y2="278" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.72"/>
+      <stop offset="0.5" stop-color="#8BE7C2"/>
+      <stop offset="1" stop-color="#23C4D8"/>
+    </linearGradient>
+  </defs>
+  
+  
+  <g id="icon">
+    
+    <path d="M256 58C360 58 454 140 454 253c0 112-86 201-198 201S58 365 58 253C58 142 147 58 256 58Z"
+      fill="none" stroke="url(#tanlong-mark-edge)" stroke-width="30" stroke-linecap="round"
+      stroke-dasharray="690 132" stroke-dashoffset="36"/>
+    <path d="M156 168H356" stroke="#102E35" stroke-width="42" stroke-linecap="square"/>
+    <path d="M256 168V344H360" stroke="#102E35" stroke-width="42" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M132 330C180 292 235 284 296 309c48 20 90 14 132-24"
+      fill="none" stroke="url(#tanlong-mark-flow)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M122 214C145 150 198 111 267 108" fill="none" stroke="#0FA7A1" stroke-width="10" stroke-linecap="round" opacity="0.2"/>
+    <circle cx="395" cy="144" r="10" fill="#8BE7C2" opacity="0.92"/>
+  </g>
+</svg>
