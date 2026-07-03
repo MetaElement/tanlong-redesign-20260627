@@ -1,15 +1,12 @@
 {
   "brand": "坦隆环境 / Tanlong Environment",
   "date": "2026-07-03",
-  "installedSkill": {
-    "name": "logo-designer",
-    "source": "https://github.com/neonwatty/logo-designer-skill",
-    "installedPath": "/Users/RenChengyuan/.codex/skills/logo-designer"
-  },
-  "selectedDirection": "concept-1-water-gate",
+  "selectedDirection": "concept-1-ink-current",
+  "designIntent": "Chinese calligraphy inspired T/L monogram with environmental water-flow finishing stroke.",
   "palette": {
     "deep": "#0B2F38",
     "ink": "#102E35",
+    "inkSoft": "#183E46",
     "teal": "#0FA7A1",
     "cyan": "#23C4D8",
     "mint": "#8BE7C2",
@@ -21,10 +18,9 @@
     "preview": "logos/preview.html",
     "reviewBoard": "review-board.html",
     "concepts": [
-      "logos/concepts/concept-1-water-gate.svg",
-      "logos/concepts/concept-2-contour-rise.svg",
-      "logos/concepts/concept-3-engineering-axis.svg",
-      "logos/concepts/concept-4-institutional-seal.svg"
+      "logos/concepts/concept-1-ink-current.svg",
+      "logos/concepts/concept-2-seal-brush.svg",
+      "logos/concepts/concept-3-literati-line.svg"
     ],
     "final": [
       "final/tanlong-logo-full.svg",
