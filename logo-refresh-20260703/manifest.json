@@ -1,14 +1,13 @@
 {
   "brand": "坦隆环境 / Tanlong Environment",
   "date": "2026-07-03",
-  "selectedDirection": "concept-1-ink-current",
-  "designIntent": "Chinese calligraphy inspired T/L monogram with environmental water-flow finishing stroke.",
+  "selectedDirection": "concept-1-dragon-spine",
+  "designIntent": "Minimal Chinese calligraphic dragon shape that subtly integrates T and L.",
   "palette": {
     "deep": "#0B2F38",
     "ink": "#102E35",
-    "inkSoft": "#183E46",
     "teal": "#0FA7A1",
-    "cyan": "#23C4D8",
+    "cyan": "#22C5D6",
     "mint": "#8BE7C2",
     "white": "#FFFFFF",
     "fog": "#EAF7F5",
@@ -18,9 +17,9 @@
     "preview": "logos/preview.html",
     "reviewBoard": "review-board.html",
     "concepts": [
-      "logos/concepts/concept-1-ink-current.svg",
-      "logos/concepts/concept-2-seal-brush.svg",
-      "logos/concepts/concept-3-literati-line.svg"
+      "logos/concepts/concept-1-dragon-spine.svg",
+      "logos/concepts/concept-2-dragon-seal.svg",
+      "logos/concepts/concept-3-river-dragon.svg"
     ],
     "final": [
       "final/tanlong-logo-full.svg",

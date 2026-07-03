@@ -1,26 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="tanlong-mark-dark-title tanlong-mark-dark-desc">
-  <title id="tanlong-mark-dark-title">坦隆环境书法 TL 图形标识</title>
-  <desc id="tanlong-mark-dark-desc">A calligraphic TL monogram combining Chinese brush gesture, water current, and environmental engineering stability.</desc>
+  <title id="tanlong-mark-dark-title">坦隆环境极简龙形 TL 标识</title>
+  <desc id="tanlong-mark-dark-desc">A minimalist Chinese calligraphic dragon mark that subtly integrates the letters T and L.</desc>
   <defs>
-    <linearGradient id="tanlong-mark-dark-aqua" x1="92" y1="336" x2="438" y2="262" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8BE7C2" stop-opacity="0.94"/>
-      <stop offset="0.54" stop-color="#23C4D8"/>
-      <stop offset="1" stop-color="#0FA7A1"/>
-    </linearGradient>
-    <linearGradient id="tanlong-mark-dark-edge" x1="98" y1="126" x2="430" y2="430" gradientUnits="userSpaceOnUse">
+    <linearGradient id="tanlong-mark-dark-water" x1="108" y1="315" x2="438" y2="263" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#8BE7C2"/>
-      <stop offset="0.48" stop-color="#23C4D8"/>
+      <stop offset="0.52" stop-color="#22C5D6"/>
       <stop offset="1" stop-color="#0FA7A1"/>
     </linearGradient>
   </defs>
   <rect width="512" height="512" rx="132" fill="#0B2F38"/>
   <g id="icon">
-    
-    <path d="M112 150C160 133 270 128 374 140C401 143 419 154 416 170C413 188 388 194 348 188C282 178 220 181 157 194C123 201 96 192 92 176C89 164 98 155 112 150Z" fill="#FFFFFF"/>
-    <path d="M236 156C267 150 290 161 288 186C284 252 284 309 296 350C306 381 337 393 391 381C421 374 440 382 440 400C439 421 412 436 364 442C294 449 237 416 226 360C217 312 226 250 224 188C223 171 225 160 236 156Z" fill="#FFFFFF"/>
-    <path d="M232 347C281 370 337 368 404 345C431 336 448 345 444 363C441 384 412 399 366 406C311 414 263 400 229 374C216 363 218 352 232 347Z" fill="#FFFFFF"/>
-    <path d="M126 323C181 284 237 282 297 306C342 325 382 317 428 280" fill="none" stroke="url(#tanlong-mark-dark-aqua)" stroke-width="26" stroke-linecap="round"/>
-    <path d="M128 231C155 206 187 190 228 187" fill="none" stroke="rgba(255,255,255,0.28)" stroke-width="10" stroke-linecap="round"/>
-    <circle cx="419" cy="151" r="9" fill="#8BE7C2"/>
+    <path d="M118 155C188 134 300 133 394 159" fill="none" stroke="#FFFFFF" stroke-width="35" stroke-linecap="round"/>
+    <path d="M252 152C232 219 205 282 169 354" fill="none" stroke="#FFFFFF" stroke-width="33" stroke-linecap="round"/>
+    <path d="M265 163C255 236 262 306 293 351C316 385 363 388 422 347" fill="none" stroke="#FFFFFF" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M145 365C220 405 331 399 429 332" fill="none" stroke="#FFFFFF" stroke-width="30" stroke-linecap="round"/>
+    <path d="M122 282C184 250 244 258 304 287C354 311 397 301 437 262" fill="none" stroke="url(#tanlong-mark-dark-water)" stroke-width="19" stroke-linecap="round"/>
+    <path d="M358 126C385 107 418 109 443 132" fill="none" stroke="url(#tanlong-mark-dark-water)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M126 235C154 209 188 195 227 193" fill="none" stroke="rgba(255,255,255,0.32)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="389" cy="151" r="8" fill="#8BE7C2"/>
   </g>
 </svg>
