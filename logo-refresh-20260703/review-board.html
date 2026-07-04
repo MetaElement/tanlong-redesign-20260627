@@ -3,70 +3,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>坦隆环境极简龙形 TL Logo Preview</title>
+  <title>坦隆环境折面 TL Logo Preview</title>
   <style>
-    :root { --ink: #102E35; --deep: #0B2F38; --teal: #0FA7A1; --line: rgba(16,46,53,.14); }
+    :root { --ink: #0D2D33; --deep: #082E35; --teal: #0EA7A0; --line: rgba(16,46,53,.14); }
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; color: var(--ink); background: linear-gradient(180deg,#f7fbfa 0%,#e9f4f2 100%); }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; color: var(--ink); background: linear-gradient(180deg,#f8fcfb 0%,#e6f4f1 100%); }
     main { width: min(1480px, calc(100vw - 96px)); margin: 0 auto; padding: 72px 0 84px; }
     header { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: end; margin-bottom: 42px; }
     h1 { margin: 0; font-size: 52px; line-height: 1.05; font-weight: 760; letter-spacing: 0; }
     .meta { color: #6a8187; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; text-align: right; }
     .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; margin-bottom: 28px; }
-    .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.72); box-shadow: 0 24px 80px rgba(11,47,56,.10); overflow: hidden; }
-    .hero .panel:first-child { display: flex; align-items: center; justify-content: center; min-height: 360px; background: radial-gradient(circle at 18% 20%, rgba(139,231,194,.22), transparent 34%), #092c35; }
+    .panel { border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.76); box-shadow: 0 24px 80px rgba(11,47,56,.10); overflow: hidden; }
+    .hero .panel:first-child { display: flex; align-items: center; justify-content: center; min-height: 360px; background: radial-gradient(circle at 18% 20%, rgba(155,235,200,.24), transparent 34%), #082e35; }
     .hero .panel:first-child img { width: min(560px, 82%); }
     .hero .panel:last-child { padding: 46px; display: grid; align-content: center; gap: 26px; }
     .hero .panel:last-child img { width: 360px; max-width: 100%; }
     .principles { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 8px; }
     .principles span { border-top: 1px solid var(--line); padding-top: 14px; color: #526b70; line-height: 1.6; font-size: 15px; }
-    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 28px; }
+    .grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 22px; }
     .card-media { background: #fff; padding: 0; }
     .card-media img { width: 100%; display: block; }
-    .card-copy { display: grid; gap: 8px; padding: 18px 22px; border-top: 1px solid var(--line); color: #526b70; font-size: 15px; line-height: 1.55; }
+    .card-copy { display: grid; gap: 8px; padding: 18px 20px; border-top: 1px solid var(--line); color: #526b70; font-size: 14px; line-height: 1.55; }
     .card-copy strong { color: var(--ink); font-size: 16px; letter-spacing: .04em; }
     .sizes { margin-top: 28px; padding: 28px; display: flex; gap: 32px; align-items: end; flex-wrap: wrap; }
     .sizes img { display: block; }
     .sizes .chip { display: grid; justify-items: center; gap: 8px; color: #6a8187; font-size: 12px; letter-spacing: .08em; }
-    @media (max-width: 1000px) { main { width: min(100vw - 36px, 760px); } header, .hero, .grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1180px) { .grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    @media (max-width: 1000px) { main { width: min(100vw - 36px, 760px); } header, .hero { grid-template-columns: 1fr; } .grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <h1>坦隆环境极简龙形 TL Logo</h1>
-      <div class="meta">Minimal Long TL / 2026-07-03</div>
+      <h1>坦隆环境折面 TL Logo</h1>
+      <div class="meta">Folded Geometry / 2026-07-04</div>
     </header>
     <section class="hero">
       <div class="panel"><img src="final/tanlong-logo-full.svg" alt="坦隆环境推荐横版 logo"></div>
       <div class="panel">
         <img src="final/tanlong-logo-full-dark.svg" alt="坦隆环境深色文字版 logo">
         <div class="principles">
-          <span>远看接近书法“龙”的骨架，近看能读出 T 与 L。</span>
-          <span>减少笔画堆叠，只保留横画、中轴、龙身和水色收笔。</span>
-          <span>不做具象龙纹，保持官网导航和工程物料的现代感。</span>
+          <span>参考附件的斜向骨架、折纸切面和立体块面，但不复制原图字形。</span>
+          <span>远看是稳定工程标识，近看能读出 T 的横势和 L 的底座。</span>
+          <span>青绿切面保留环境、水务和低碳科技感，适合深色官网 Hero。</span>
         </div>
       </div>
     </section>
     <section class="grid"><article class="card">
-  <div class="card-media"><img src="logos/concepts/concept-1-dragon-spine.svg" alt="Dragon Spine"></div>
+  <div class="card-media"><img src="logos/concepts/concept-1-folded-dragon-tl.svg" alt="Folded Dragon TL"></div>
   <div class="card-copy">
-    <strong>01 Dragon Spine</strong>
-    <span>推荐用于官网。最极简，龙形和 T/L 融合最自然。</span>
+    <strong>01 Folded Dragon TL</strong>
+    <span>推荐用于官网。最接近附件的折面逻辑，同时在导航小尺寸下仍能读出 TL。</span>
   </div>
 </article>
 <article class="card">
-  <div class="card-media"><img src="logos/concepts/concept-2-dragon-seal.svg" alt="Dragon Seal"></div>
+  <div class="card-media"><img src="logos/concepts/concept-2-prism-line-tl.svg" alt="Prism Line TL"></div>
   <div class="card-copy">
-    <strong>02 Dragon Seal</strong>
-    <span>备选方向，用于比较龙形完整度和品牌厚重感。</span>
+    <strong>02 Prism Line TL</strong>
+    <span>备选方向，用于比较线框感、断裂感和龙形意象的强弱。</span>
   </div>
 </article>
 <article class="card">
-  <div class="card-media"><img src="logos/concepts/concept-3-river-dragon.svg" alt="River Dragon"></div>
+  <div class="card-media"><img src="logos/concepts/concept-3-segmented-tl.svg" alt="Segmented TL"></div>
   <div class="card-copy">
-    <strong>03 River Dragon</strong>
-    <span>备选方向，用于比较龙形完整度和品牌厚重感。</span>
+    <strong>03 Segmented TL</strong>
+    <span>备选方向，用于比较线框感、断裂感和龙形意象的强弱。</span>
+  </div>
+</article>
+<article class="card">
+  <div class="card-media"><img src="logos/concepts/concept-4-seal-fold-tl.svg" alt="Seal Fold TL"></div>
+  <div class="card-copy">
+    <strong>04 Seal Fold TL</strong>
+    <span>备选方向，用于比较线框感、断裂感和龙形意象的强弱。</span>
   </div>
 </article></section>
     <section class="panel sizes">

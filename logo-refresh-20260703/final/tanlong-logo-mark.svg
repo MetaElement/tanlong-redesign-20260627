@@ -1,22 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="tanlong-mark-title tanlong-mark-desc">
-  <title id="tanlong-mark-title">坦隆环境极简龙形 TL 标识</title>
-  <desc id="tanlong-mark-desc">A minimalist Chinese calligraphic dragon mark that subtly integrates the letters T and L.</desc>
-  <defs>
-    <linearGradient id="tanlong-mark-water" x1="108" y1="315" x2="438" y2="263" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8BE7C2"/>
-      <stop offset="0.52" stop-color="#22C5D6"/>
-      <stop offset="1" stop-color="#0FA7A1"/>
-    </linearGradient>
-  </defs>
+  <title id="tanlong-mark-title">坦隆环境折面 TL 标识</title>
+  <desc id="tanlong-mark-desc">A folded geometric TL monogram for Tanlong Environment, inspired by architectural facets and a subtle dragon-like turning stroke.</desc>
   
-  <g id="icon">
-    <path d="M118 155C188 134 300 133 394 159" fill="none" stroke="#102E35" stroke-width="35" stroke-linecap="round"/>
-    <path d="M252 152C232 219 205 282 169 354" fill="none" stroke="#102E35" stroke-width="33" stroke-linecap="round"/>
-    <path d="M265 163C255 236 262 306 293 351C316 385 363 388 422 347" fill="none" stroke="#102E35" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M145 365C220 405 331 399 429 332" fill="none" stroke="#102E35" stroke-width="30" stroke-linecap="round"/>
-    <path d="M122 282C184 250 244 258 304 287C354 311 397 301 437 262" fill="none" stroke="url(#tanlong-mark-water)" stroke-width="19" stroke-linecap="round"/>
-    <path d="M358 126C385 107 418 109 443 132" fill="none" stroke="url(#tanlong-mark-water)" stroke-width="10" stroke-linecap="round"/>
-    <path d="M126 235C154 209 188 195 227 193" fill="none" stroke="rgba(16,46,53,0.18)" stroke-width="8" stroke-linecap="round"/>
-    <circle cx="389" cy="151" r="8" fill="#8BE7C2"/>
+  <g id="icon" shape-rendering="geometricPrecision">
+    <polygon points="82,126 350,126 319,183 113,183" fill="#0D2D33"/>
+    <polygon points="350,126 400,176 368,233 319,183" fill="#9BEBC8"/>
+    <polygon points="319,183 368,233 313,233 281,183" fill="#173E45" opacity="1"/>
+    <polygon points="207,183 281,183 239,383 165,383" fill="#0D2D33"/>
+    <polygon points="281,183 321,226 279,426 239,383" fill="#173E45" opacity="1"/>
+    <polygon points="86,383 165,383 205,426 124,426" fill="#75969B" opacity="0.75"/>
+    <polygon points="165,383 388,383 426,426 205,426" fill="#0D2D33"/>
+    <polygon points="388,383 426,426 463,382 424,334" fill="#21C7D8"/>
+    <polygon points="50,383 86,383 124,426 88,426" fill="#9BEBC8"/>
+    <polygon points="82,126 113,183 48,183 18,126" fill="#0D2D33" opacity="0.96"/>
   </g>
 </svg>

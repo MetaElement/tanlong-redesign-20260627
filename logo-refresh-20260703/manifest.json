@@ -1,25 +1,29 @@
 {
   "brand": "坦隆环境 / Tanlong Environment",
-  "date": "2026-07-03",
-  "selectedDirection": "concept-1-dragon-spine",
-  "designIntent": "Minimal Chinese calligraphic dragon shape that subtly integrates T and L.",
+  "date": "2026-07-04",
+  "selectedDirection": "concept-1-folded-dragon-tl",
+  "designIntent": "Folded geometric TL monogram inspired by architectural facets and a subtle dragon-like turning stroke.",
+  "reference": "/Users/RenChengyuan/Downloads/original-a7f88a8bedaaf3964c6123a47f5fbceb.webp",
   "palette": {
-    "deep": "#0B2F38",
-    "ink": "#102E35",
-    "teal": "#0FA7A1",
-    "cyan": "#22C5D6",
-    "mint": "#8BE7C2",
+    "deep": "#082E35",
+    "ink": "#0D2D33",
+    "graphite": "#173E45",
+    "teal": "#0EA7A0",
+    "cyan": "#21C7D8",
+    "mint": "#9BEBC8",
     "white": "#FFFFFF",
-    "fog": "#EAF7F5",
-    "steel": "#6A8187"
+    "fog": "#EAF7F4",
+    "steel": "#6D858B",
+    "line": "#B7D2D1"
   },
   "files": {
     "preview": "logos/preview.html",
     "reviewBoard": "review-board.html",
     "concepts": [
-      "logos/concepts/concept-1-dragon-spine.svg",
-      "logos/concepts/concept-2-dragon-seal.svg",
-      "logos/concepts/concept-3-river-dragon.svg"
+      "logos/concepts/concept-1-folded-dragon-tl.svg",
+      "logos/concepts/concept-2-prism-line-tl.svg",
+      "logos/concepts/concept-3-segmented-tl.svg",
+      "logos/concepts/concept-4-seal-fold-tl.svg"
     ],
     "final": [
       "final/tanlong-logo-full.svg",

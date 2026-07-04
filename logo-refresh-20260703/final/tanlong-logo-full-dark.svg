@@ -1,30 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 64" role="img" aria-labelledby="tanlong-full-dark-title tanlong-full-dark-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 392 64" role="img" aria-labelledby="tanlong-full-dark-title tanlong-full-dark-desc">
   <title id="tanlong-full-dark-title">坦隆环境 Tanlong Environment logo</title>
-  <desc id="tanlong-full-dark-desc">A premium Tanlong Environment logo with a minimalist Chinese dragon-shaped TL mark and bilingual wordmark.</desc>
-  <defs>
-    <linearGradient id="tanlong-full-dark-water" x1="108" y1="315" x2="438" y2="263" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#8BE7C2"/>
-      <stop offset="0.52" stop-color="#22C5D6"/>
-      <stop offset="1" stop-color="#0FA7A1"/>
-    </linearGradient>
-  </defs>
+  <desc id="tanlong-full-dark-desc">A premium Tanlong Environment logo with a folded geometric TL monogram and bilingual wordmark.</desc>
   <defs></defs>
-  <g fill="none">
-    <g transform="translate(-5 -1) scale(0.128)">
-      <g id="icon">
-    <path d="M118 155C188 134 300 133 394 159" fill="none" stroke="#102E35" stroke-width="35" stroke-linecap="round"/>
-    <path d="M252 152C232 219 205 282 169 354" fill="none" stroke="#102E35" stroke-width="33" stroke-linecap="round"/>
-    <path d="M265 163C255 236 262 306 293 351C316 385 363 388 422 347" fill="none" stroke="#102E35" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M145 365C220 405 331 399 429 332" fill="none" stroke="#102E35" stroke-width="30" stroke-linecap="round"/>
-    <path d="M122 282C184 250 244 258 304 287C354 311 397 301 437 262" fill="none" stroke="url(#tanlong-full-dark-water)" stroke-width="19" stroke-linecap="round"/>
-    <path d="M358 126C385 107 418 109 443 132" fill="none" stroke="url(#tanlong-full-dark-water)" stroke-width="10" stroke-linecap="round"/>
-    <path d="M126 235C154 209 188 195 227 193" fill="none" stroke="rgba(16,46,53,0.18)" stroke-width="8" stroke-linecap="round"/>
-    <circle cx="389" cy="151" r="8" fill="#8BE7C2"/>
+  <g id="logo-lockup">
+    <g transform="translate(-6 -1) scale(0.13)">
+      <g id="icon" shape-rendering="geometricPrecision">
+    <polygon points="82,126 350,126 319,183 113,183" fill="#0D2D33"/>
+    <polygon points="350,126 400,176 368,233 319,183" fill="#9BEBC8"/>
+    <polygon points="319,183 368,233 313,233 281,183" fill="#173E45" opacity="1"/>
+    <polygon points="207,183 281,183 239,383 165,383" fill="#0D2D33"/>
+    <polygon points="281,183 321,226 279,426 239,383" fill="#173E45" opacity="1"/>
+    <polygon points="86,383 165,383 205,426 124,426" fill="#75969B" opacity="0.75"/>
+    <polygon points="165,383 388,383 426,426 205,426" fill="#0D2D33"/>
+    <polygon points="388,383 426,426 463,382 424,334" fill="#21C7D8"/>
+    <polygon points="50,383 86,383 124,426 88,426" fill="#9BEBC8"/>
+    <polygon points="82,126 113,183 48,183 18,126" fill="#0D2D33" opacity="0.96"/>
   </g>
     </g>
     <g id="wordmark" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Source Han Sans SC, Helvetica, Arial, sans-serif">
-      <text x="88" y="29" fill="#102E35" font-size="29" font-weight="760" letter-spacing="0">坦隆环境</text>
-      <text x="90" y="50" fill="#6A8187" font-size="12.3" font-weight="650" letter-spacing="2.05">TANLONG ENVIRONMENT</text>
+      <text x="88" y="29" fill="#0D2D33" font-size="29" font-weight="760" letter-spacing="0">坦隆环境</text>
+      <text x="90" y="50" fill="#6D858B" font-size="12.3" font-weight="650" letter-spacing="2.05">TANLONG ENVIRONMENT</text>
     </g>
   </g>
 </svg>
