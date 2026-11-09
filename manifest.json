@@ -38,6 +38,6 @@
   "generationStatus": {
     "nativeImageGeneration": "complete via saved .codex/generated_images artifact",
     "codexExecBatch": "failed to receive saveable PNG path inside worker",
-    "selectedOriginal": "/Users/RenChengyuan/.codex/generated_images/019f0761-9af5-7200-918e-617206fd7b3c/ig_0d3afc4a7e5c4e02016a3f5469c7048198affea4ef4e9e83f2.png"
+    "selectedOriginal": "~/.codex/generated_images/019f0761-9af5-7200-918e-617206fd7b3c/ig_0d3afc4a7e5c4e02016a3f5469c7048198affea4ef4e9e83f2.png"
   }
 }

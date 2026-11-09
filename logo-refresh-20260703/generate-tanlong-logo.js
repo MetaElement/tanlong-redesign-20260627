@@ -308,7 +308,7 @@ write(path.join(root, "manifest.json"), JSON.stringify({
   date: "2026-07-04",
   selectedDirection: "concept-1-folded-dragon-tl",
   designIntent: "Folded geometric TL monogram inspired by architectural facets and a subtle dragon-like turning stroke.",
-  reference: "/Users/RenChengyuan/Downloads/original-a7f88a8bedaaf3964c6123a47f5fbceb.webp",
+  reference: "~/Downloads/original-a7f88a8bedaaf3964c6123a47f5fbceb.webp",
   palette,
   files: {
     preview: "logos/preview.html",

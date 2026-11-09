@@ -8,7 +8,7 @@
 
 ## Local Source
 
-- Prototype directory: `/Users/RenChengyuan/Desktop/Ebooks/tanlong-environment-website/`
+- Prototype directory: `~/Desktop/Ebooks/tanlong-environment-website/`
 - Background selected: `assets/site/hero/hero-01-mill.png`
 - Reused facts and labels: steel slag dry-process treatment, waste heat recovery, low-carbon operation data, patent and case evidence.
 
